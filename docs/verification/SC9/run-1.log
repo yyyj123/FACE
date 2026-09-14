@@ -1,0 +1,827 @@
+SC9_PORT_PREFLIGHT=PASS;HTTP=9080;HTTPS=9443;PROMETHEUS=19090
+SC9_PRODUCTION_STATIC_CONTRACT=PASS
+SC9_LINUX_SHELL_SYNTAX=PASS
+[INFO] Scanning for projects...
+[INFO]
+[INFO] --------------------< com.face:face-chain-platform >--------------------
+[INFO] Building FACE Chain Platform 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- resources:3.5.0:resources (default-resources) @ face-chain-platform ---
+[INFO] Copying 3 resources from src\main\resources to target\classes
+[INFO] Copying 200 resources from src\main\resources to target\classes
+[INFO]
+[INFO] --- compiler:3.15.0:compile (default-compile) @ face-chain-platform ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ face-chain-platform ---
+[INFO] skip non existing resourceDirectory E:\face\backend-next\src\test\resources
+[INFO]
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ face-chain-platform ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- surefire:3.5.6:test (default-test) @ face-chain-platform ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO]
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.face.platform.aftersale.AfterSalePolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s -- in com.face.platform.aftersale.AfterSalePolicyTest
+[INFO] Running com.face.platform.analytics.AnalyticsQueryPolicyTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s -- in com.face.platform.analytics.AnalyticsQueryPolicyTest
+[INFO] Running com.face.platform.analytics.AnalyticsReportCsvTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.045 s -- in com.face.platform.analytics.AnalyticsReportCsvTest
+[INFO] Running com.face.platform.analytics.AnalyticsReportPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.face.platform.analytics.AnalyticsReportPolicyTest
+[INFO] Running com.face.platform.analytics.AnalyticsReportSnapshotServiceTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.481 s -- in com.face.platform.analytics.AnalyticsReportSnapshotServiceTest
+[INFO] Running com.face.platform.analytics.M6ReportSnapshotMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in com.face.platform.analytics.M6ReportSnapshotMigrationContractTest
+[INFO] Running com.face.platform.analytics.TransactionAnalyticsQueryServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.analytics.TransactionAnalyticsQueryServiceTest
+[INFO] Running com.face.platform.api.DatabaseContractHealthIndicatorTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in com.face.platform.api.DatabaseContractHealthIndicatorTest
+[INFO] Running com.face.platform.appointment.AppointmentCompletionGuardTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 s -- in com.face.platform.appointment.AppointmentCompletionGuardTest
+[INFO] Running com.face.platform.appointment.AppointmentSelfScopeTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.face.platform.appointment.AppointmentSelfScopeTest
+[INFO] Running com.face.platform.appointment.AppointmentStatusPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s -- in com.face.platform.appointment.AppointmentStatusPolicyTest
+[INFO] Running com.face.platform.approval.ApprovalPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.approval.ApprovalPolicyTest
+[INFO] Running com.face.platform.approval.M5AfterSaleApprovalApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.face.platform.approval.M5AfterSaleApprovalApiContractTest
+[INFO] Running com.face.platform.approval.M5AfterSaleApprovalMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.approval.M5AfterSaleApprovalMigrationContractTest
+[INFO] Running com.face.platform.benefit.BenefitReservationPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in com.face.platform.benefit.BenefitReservationPolicyTest
+[INFO] Running com.face.platform.booking.BookingPolicyTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in com.face.platform.booking.BookingPolicyTest
+[INFO] Running com.face.platform.booking.BookingWaitlistPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.booking.BookingWaitlistPolicyTest
+[INFO] Running com.face.platform.booking.Sc3SchedulingMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.face.platform.booking.Sc3SchedulingMigrationContractTest
+[INFO] Running com.face.platform.checkout.DiscountSelectionPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.face.platform.checkout.DiscountSelectionPolicyTest
+[INFO] Running com.face.platform.checkout.Sc4OrderBenefitsMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.face.platform.checkout.Sc4OrderBenefitsMigrationContractTest
+[INFO] Running com.face.platform.client.ClientAppointmentProjectionContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.face.platform.client.ClientAppointmentProjectionContractTest
+[INFO] Running com.face.platform.client.ClientAuthServiceValidationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.173 s -- in com.face.platform.client.ClientAuthServiceValidationTest
+[INFO] Running com.face.platform.client.ClientCatalogCompatibilityContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.face.platform.client.ClientCatalogCompatibilityContractTest
+[INFO] Running com.face.platform.client.M6PublicMediaOptimizationMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.client.M6PublicMediaOptimizationMigrationContractTest
+[INFO] Running com.face.platform.client.Sc2DefaultShopBoundaryContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.client.Sc2DefaultShopBoundaryContractTest
+[INFO] Running com.face.platform.commission.CommissionAdjustmentPolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.commission.CommissionAdjustmentPolicyTest
+[INFO] Running com.face.platform.commission.CommissionEntryPolicyTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s -- in com.face.platform.commission.CommissionEntryPolicyTest
+[INFO] Running com.face.platform.commission.CommissionEventProjectionContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.face.platform.commission.CommissionEventProjectionContractTest
+[INFO] Running com.face.platform.commission.CommissionRulePolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.face.platform.commission.CommissionRulePolicyTest
+[INFO] Running com.face.platform.commission.CommissionSourceSnapshotPolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.commission.CommissionSourceSnapshotPolicyTest
+[INFO] Running com.face.platform.commission.CommissionSourceSnapshotSelfScopeTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in com.face.platform.commission.CommissionSourceSnapshotSelfScopeTest
+[INFO] Running com.face.platform.commission.M5CommissionEntryApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.commission.M5CommissionEntryApiContractTest
+[INFO] Running com.face.platform.commission.M5CommissionEntryMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.commission.M5CommissionEntryMigrationContractTest
+[INFO] Running com.face.platform.commission.M5CommissionRuleApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.commission.M5CommissionRuleApiContractTest
+[INFO] Running com.face.platform.commission.M5CommissionRuleMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.commission.M5CommissionRuleMigrationContractTest
+[INFO] Running com.face.platform.content.ContentStatusPolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.content.ContentStatusPolicyTest
+[INFO] Running com.face.platform.demo.DemoAccessServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in com.face.platform.demo.DemoAccessServiceTest
+[INFO] Running com.face.platform.idempotency.CommandIdempotencyServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s -- in com.face.platform.idempotency.CommandIdempotencyServiceTest
+[INFO] Running com.face.platform.identity.AdminRolePolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.identity.AdminRolePolicyTest
+[INFO] Running com.face.platform.identity.IdentityApplicationServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in com.face.platform.identity.IdentityApplicationServiceTest
+[INFO] Running com.face.platform.identity.Sc2IdentityContentMigrationContractTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.identity.Sc2IdentityContentMigrationContractTest
+[INFO] Running com.face.platform.identity.SmsVerificationPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.face.platform.identity.SmsVerificationPolicyTest
+[INFO] Running com.face.platform.integration.IntegrationClientFilterTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 s -- in com.face.platform.integration.IntegrationClientFilterTest
+[INFO] Running com.face.platform.integration.IntegrationClientPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in com.face.platform.integration.IntegrationClientPolicyTest
+[INFO] Running com.face.platform.integration.M6TrainingOpenPlatformMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.integration.M6TrainingOpenPlatformMigrationContractTest
+[INFO] Running com.face.platform.inventory.StockBatchFefoPolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.face.platform.inventory.StockBatchFefoPolicyTest
+[INFO] Running com.face.platform.legacyimport.LegacyImportDesktopGateTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in com.face.platform.legacyimport.LegacyImportDesktopGateTest
+[INFO] Running com.face.platform.legacyimport.LegacyImportWorkbookTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.700 s -- in com.face.platform.legacyimport.LegacyImportWorkbookTest
+[INFO] Running com.face.platform.legacyimport.Sc7LegacyImportMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.legacyimport.Sc7LegacyImportMigrationContractTest
+[INFO] Running com.face.platform.marketing.M6MarketingMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.marketing.M6MarketingMigrationContractTest
+[INFO] Running com.face.platform.marketing.MarketingCampaignPolicyTest
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.face.platform.marketing.MarketingCampaignPolicyTest
+[INFO] Running com.face.platform.marketing.MarketingConsentPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.marketing.MarketingConsentPolicyTest
+[INFO] Running com.face.platform.masterdata.M2MigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.masterdata.M2MigrationContractTest
+[INFO] Running com.face.platform.masterdata.ServiceCatalogServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.face.platform.masterdata.ServiceCatalogServiceTest
+[INFO] Running com.face.platform.masterdata.StaffPublicProfileServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.masterdata.StaffPublicProfileServiceTest
+[INFO] Running com.face.platform.masterdata.StaffScheduleServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.face.platform.masterdata.StaffScheduleServiceTest
+[INFO] Running com.face.platform.masterdata.StaffSkillVersionServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.face.platform.masterdata.StaffSkillVersionServiceTest
+[INFO] Running com.face.platform.notification.M5NotificationApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.notification.M5NotificationApiContractTest
+[INFO] Running com.face.platform.notification.M5NotificationMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.notification.M5NotificationMigrationContractTest
+[INFO] Running com.face.platform.notification.NotificationPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.notification.NotificationPolicyTest
+[INFO] Running com.face.platform.notification.NotificationProjectionContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.notification.NotificationProjectionContractTest
+[INFO] Running com.face.platform.outbox.OutboxEventServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in com.face.platform.outbox.OutboxEventServiceTest
+[INFO] Running com.face.platform.packageaccount.M4PackageAccountApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.packageaccount.M4PackageAccountApiContractTest
+[INFO] Running com.face.platform.packageaccount.M4PackageAccountMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.packageaccount.M4PackageAccountMigrationContractTest
+[INFO] Running com.face.platform.packageaccount.MemberAccountApplicationServiceValidationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.packageaccount.MemberAccountApplicationServiceValidationTest
+[INFO] Running com.face.platform.packageaccount.MemberAccountPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.packageaccount.MemberAccountPolicyTest
+[INFO] Running com.face.platform.packageaccount.MemberAccountReversalContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.packageaccount.MemberAccountReversalContractTest
+[INFO] Running com.face.platform.packageaccount.PackageAccountModuleBoundaryContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.packageaccount.PackageAccountModuleBoundaryContractTest
+[INFO] Running com.face.platform.packageaccount.PackageLifecyclePolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in com.face.platform.packageaccount.PackageLifecyclePolicyTest
+[INFO] Running com.face.platform.payment.PaymentCallbackVerifierTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in com.face.platform.payment.PaymentCallbackVerifierTest
+[INFO] Running com.face.platform.payment.PaymentChannelPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.payment.PaymentChannelPolicyTest
+[INFO] Running com.face.platform.points.PointsPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.face.platform.points.PointsPolicyTest
+[INFO] Running com.face.platform.points.Sc5PointsStoreMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.points.Sc5PointsStoreMigrationContractTest
+[INFO] Running com.face.platform.production.ObjectStorageHealthIndicatorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.253 s -- in com.face.platform.production.ObjectStorageHealthIndicatorTest
+[INFO] Running com.face.platform.production.ProductionSafetyPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in com.face.platform.production.ProductionSafetyPolicyTest
+[INFO] Running com.face.platform.purchase.M4PurchaseBatchMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.purchase.M4PurchaseBatchMigrationContractTest
+[INFO] Running com.face.platform.purchase.PurchaseModuleBoundaryContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.purchase.PurchaseModuleBoundaryContractTest
+[INFO] Running com.face.platform.purchase.PurchaseOrderStatusPolicyTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.purchase.PurchaseOrderStatusPolicyTest
+[INFO] Running com.face.platform.purchase.PurchaseReceiptPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.purchase.PurchaseReceiptPolicyTest
+[INFO] Running com.face.platform.reconciliation.M4PaymentReconciliationMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.face.platform.reconciliation.M4PaymentReconciliationMigrationContractTest
+[INFO] Running com.face.platform.reconciliation.ReconciliationLifecyclePolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.reconciliation.ReconciliationLifecyclePolicyTest
+[INFO] Running com.face.platform.reconciliation.ReconciliationPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.reconciliation.ReconciliationPolicyTest
+[INFO] Running com.face.platform.resource.ResourceBookingConcurrencyContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.resource.ResourceBookingConcurrencyContractTest
+[INFO] Running com.face.platform.resource.ResourceBookingServiceTest
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s -- in com.face.platform.resource.ResourceBookingServiceTest
+[INFO] Running com.face.platform.resource.ServiceResourceServiceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.face.platform.resource.ServiceResourceServiceTest
+[INFO] Running com.face.platform.sc6.Sc6PolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.sc6.Sc6PolicyTest
+[INFO] Running com.face.platform.security.AdminSurfaceGuardFilterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s -- in com.face.platform.security.AdminSurfaceGuardFilterTest
+[INFO] Running com.face.platform.security.BackendDependencySecurityContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s -- in com.face.platform.security.BackendDependencySecurityContractTest
+[INFO] Running com.face.platform.security.M5LeastPrivilegeVerificationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.security.M5LeastPrivilegeVerificationContractTest
+[INFO] Running com.face.platform.security.Sc2RoleMatrixContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.security.Sc2RoleMatrixContractTest
+[INFO] Running com.face.platform.security.TenantAccessServiceTest
+[INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s -- in com.face.platform.security.TenantAccessServiceTest
+[INFO] Running com.face.platform.security.TenantIdentityScopeTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.security.TenantIdentityScopeTest
+[INFO] Running com.face.platform.servicecare.CustomerConfirmationServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 s -- in com.face.platform.servicecare.CustomerConfirmationServiceTest
+[INFO] Running com.face.platform.servicecare.M3MigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.servicecare.M3MigrationContractTest
+[INFO] Running com.face.platform.servicecare.ServiceModuleBoundaryContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.servicecare.ServiceModuleBoundaryContractTest
+[INFO] Running com.face.platform.servicecare.ServiceRecordCorrectionServiceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in com.face.platform.servicecare.ServiceRecordCorrectionServiceTest
+[INFO] Running com.face.platform.servicecare.ServiceResourceLegacyCompatibilityContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.servicecare.ServiceResourceLegacyCompatibilityContractTest
+[INFO] Running com.face.platform.settlement.CommissionSettlementPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.settlement.CommissionSettlementPolicyTest
+[INFO] Running com.face.platform.settlement.M5CommissionSettlementApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.settlement.M5CommissionSettlementApiContractTest
+[INFO] Running com.face.platform.settlement.M5CommissionSettlementMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.settlement.M5CommissionSettlementMigrationContractTest
+[INFO] Running com.face.platform.shop.ShopContextServiceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in com.face.platform.shop.ShopContextServiceTest
+[INFO] Running com.face.platform.store.MallPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.face.platform.store.MallPolicyTest
+[INFO] Running com.face.platform.training.TrainingPolicyTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.training.TrainingPolicyTest
+[INFO] Running com.face.platform.transaction.M4RefundLifecycleContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.transaction.M4RefundLifecycleContractTest
+[INFO] Running com.face.platform.transaction.M4RefundMigrationContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.transaction.M4RefundMigrationContractTest
+[INFO] Running com.face.platform.transaction.RefundExecutionPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.transaction.RefundExecutionPolicyTest
+[INFO] Running com.face.platform.transaction.TransactionIdempotencyContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.transaction.TransactionIdempotencyContractTest
+[INFO] Running com.face.platform.transaction.TransactionStatusPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.transaction.TransactionStatusPolicyTest
+[INFO] Running com.face.platform.v3.api.M4ApiContractDocumentTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.v3.api.M4ApiContractDocumentTest
+[INFO] Running com.face.platform.v3.api.M5ApiContractDocumentTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.v3.api.M5ApiContractDocumentTest
+[INFO] Running com.face.platform.v3.api.RequestIdFilterTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.v3.api.RequestIdFilterTest
+[INFO] Running com.face.platform.v3.api.V3ApiResponseTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in com.face.platform.v3.api.V3ApiResponseTest
+[INFO] Running com.face.platform.v3.auth.SessionTokenCodecTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in com.face.platform.v3.auth.SessionTokenCodecTest
+[INFO] Running com.face.platform.v3.auth.V3AuthSessionRepositoryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s -- in com.face.platform.v3.auth.V3AuthSessionRepositoryTest
+[INFO] Running com.face.platform.v3.auth.V3AuthSessionServiceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.682 s -- in com.face.platform.v3.auth.V3AuthSessionServiceTest
+[INFO] Running com.face.platform.v3.auth.V3ClientIdentityApiContractTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in com.face.platform.v3.auth.V3ClientIdentityApiContractTest
+[INFO] Running com.face.platform.v3.content.Sc2ContentApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.v3.content.Sc2ContentApiContractTest
+[INFO] Running com.face.platform.v3.identity.V3AdminAccountApiContractTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s -- in com.face.platform.v3.identity.V3AdminAccountApiContractTest
+[INFO]
+[INFO] Results:
+[INFO]
+[INFO] Tests run: 218, Failures: 0, Errors: 0, Skipped: 0
+[INFO]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.586 s
+[INFO] Finished at: 2026-08-10T13:59:11+08:00
+[INFO] ------------------------------------------------------------------------
+SC9_BACKEND_TESTS=PASS
+
+> face-chain-admin@0.1.0 build
+> vue-tsc -b && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 1775 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                       0.77 kB │ gzip:  0.52 kB
+dist/assets/SettingsView-DNt8_bbO.css                 0.69 kB │ gzip:  0.35 kB
+dist/assets/AppShell-Djui3KQI.css                     1.01 kB │ gzip:  0.45 kB
+dist/assets/StaffProfilesView-C4ljRwco.css            1.04 kB │ gzip:  0.42 kB
+dist/assets/el-empty-S7fQQ3B8.css                     1.16 kB │ gzip:  0.46 kB
+dist/assets/FulfillmentOperationsView-DFM4QH24.css    1.28 kB │ gzip:  0.45 kB
+dist/assets/el-skeleton-BjvgS5Bk.css                  1.57 kB │ gzip:  0.53 kB
+dist/assets/ContentView-Colj47ms.css                  1.57 kB │ gzip:  0.52 kB
+dist/assets/el-loading-Dq8WDDkr.css                   1.60 kB │ gzip:  0.53 kB
+dist/assets/PointsMallOperationsView-CnR0VgEb.css     2.18 kB │ gzip:  0.59 kB
+dist/assets/DataMigrationView-DvewfwDx.css            3.22 kB │ gzip:  0.86 kB
+dist/assets/el-alert-B6UgayC7.css                     3.47 kB │ gzip:  0.74 kB
+dist/assets/el-dialog-DUbGnqO_.css                    3.54 kB │ gzip:  0.97 kB
+dist/assets/MobileOperationsView-Dsn-g3EH.css         3.71 kB │ gzip:  0.86 kB
+dist/assets/BenefitsOperationsView-DfEtMueq.css       3.79 kB │ gzip:  0.99 kB
+dist/assets/el-switch-DpR9-s4E.css                    3.91 kB │ gzip:  0.95 kB
+dist/assets/el-input-number-DExoAqKP.css              4.35 kB │ gzip:  0.90 kB
+dist/assets/el-checkbox-CzNtyWdF.css                  6.51 kB │ gzip:  1.22 kB
+dist/assets/el-radio-button-TYBaCPcE.css              7.58 kB │ gzip:  1.42 kB
+dist/assets/base-BhyKBIh7.css                         7.79 kB │ gzip:  1.96 kB
+dist/assets/el-select-CK58rX4v.css                    9.82 kB │ gzip:  1.94 kB
+dist/assets/el-tag-Csn_yPGm.css                       9.83 kB │ gzip:  1.69 kB
+dist/assets/el-tab-pane-LzsQQ_QK.css                 15.78 kB │ gzip:  2.34 kB
+dist/assets/BookingOperationsView-C6tIpnAU.css       16.77 kB │ gzip:  3.03 kB
+dist/assets/el-input-WYb62p31.css                    16.86 kB │ gzip:  2.57 kB
+dist/assets/MasterDataView-DOGFwSYt.css              18.11 kB │ gzip:  3.17 kB
+dist/assets/el-table-column-Dp73S2HR.css             19.54 kB │ gzip:  2.91 kB
+dist/assets/el-button-ZSOkJyjJ.css                   19.90 kB │ gzip:  2.14 kB
+dist/assets/el-date-picker-BsrAVvYx.css              28.88 kB │ gzip:  4.20 kB
+dist/assets/index-Z1w7ct7X.css                       42.17 kB │ gzip:  7.14 kB
+dist/assets/validator-DQQsHJ6g.js                     0.09 kB │ gzip:  0.11 kB
+dist/assets/isArrayLikeObject-TqZlauIp.js             0.20 kB │ gzip:  0.17 kB
+dist/assets/vnode-B7DlbAet.js                         0.43 kB │ gzip:  0.28 kB
+dist/assets/omit-CPv1kkYX.js                          0.97 kB │ gzip:  0.58 kB
+dist/assets/debounce-BXNLDoHL.js                      1.06 kB │ gzip:  0.57 kB
+dist/assets/el-skeleton-DfRToaRO.js                   1.76 kB │ gzip:  0.92 kB
+dist/assets/el-alert-958A7hQ9.js                      2.00 kB │ gzip:  0.95 kB
+dist/assets/OverviewView-CNdG1qRH.js                  2.17 kB │ gzip:  1.28 kB
+dist/assets/LoginView-Dz0tMHyC.js                     2.77 kB │ gzip:  1.54 kB
+dist/assets/index-CyN0XCTu.js                         3.02 kB │ gzip:  1.41 kB
+dist/assets/StaffProfilesView-BIwuJgt3.js             3.56 kB │ gzip:  1.73 kB
+dist/assets/el-empty-Bp3-4cxO.js                      4.49 kB │ gzip:  1.62 kB
+dist/assets/el-loading-SFbn75Zo.js                    4.66 kB │ gzip:  2.01 kB
+dist/assets/SettingsView-BLEFkTx8.js                  4.88 kB │ gzip:  2.16 kB
+dist/assets/el-switch-WVjTXIYF.js                     5.03 kB │ gzip:  1.74 kB
+dist/assets/AppShell-DR-DCaSk.js                      5.12 kB │ gzip:  1.83 kB
+dist/assets/el-radio-button-ClNUariU.js               5.27 kB │ gzip:  2.18 kB
+dist/assets/DataMigrationView-DqYTfwoH.js             6.37 kB │ gzip:  3.01 kB
+dist/assets/ContentView-BiTE2MEa.js                   6.89 kB │ gzip:  2.89 kB
+dist/assets/MobileOperationsView-BLOV3ApP.js          7.13 kB │ gzip:  2.81 kB
+dist/assets/el-input-number-BuQY4j0K.js               7.64 kB │ gzip:  3.11 kB
+dist/assets/index-BA_5F1i1.js                         7.69 kB │ gzip:  3.25 kB
+dist/assets/index-ks1H9ai2.js                         8.18 kB │ gzip:  3.49 kB
+dist/assets/el-dialog-DngpI2x3.js                     8.73 kB │ gzip:  3.45 kB
+dist/assets/el-checkbox-aj2kQOkC.js                   9.07 kB │ gzip:  3.28 kB
+dist/assets/FulfillmentOperationsView-DPg496fD.js    10.52 kB │ gzip:  4.39 kB
+dist/assets/index-_OvY3o05.js                        11.52 kB │ gzip:  4.28 kB
+dist/assets/el-tab-pane-Uqbb_0W8.js                  12.49 kB │ gzip:  5.21 kB
+dist/assets/index-S3CzlDir.js                        14.37 kB │ gzip:  5.31 kB
+dist/assets/BenefitsOperationsView-DrmGfBrK.js       17.36 kB │ gzip:  5.39 kB
+dist/assets/PointsMallOperationsView-D-v9OkaT.js     18.33 kB │ gzip:  5.96 kB
+dist/assets/BookingOperationsView-0YLtICG7.js        22.31 kB │ gzip:  7.30 kB
+dist/assets/el-select-BQiC7GS4.js                    31.03 kB │ gzip: 10.64 kB
+dist/assets/el-input-BfddcJQ9.js                     31.85 kB │ gzip: 11.24 kB
+dist/assets/MasterDataView-ChYFXcnL.js               32.26 kB │ gzip: 10.61 kB
+dist/assets/el-button-BUrj7ahb.js                    44.00 kB │ gzip: 16.96 kB
+dist/assets/base-uorHH4zF.js                         46.15 kB │ gzip: 15.88 kB
+dist/assets/el-tag-D4wKUcAb.js                       49.39 kB │ gzip: 17.58 kB
+dist/assets/el-table-column-BvvtV6Yw.js              76.62 kB │ gzip: 26.65 kB
+dist/assets/el-date-picker-CTLhziB8.js               91.31 kB │ gzip: 26.67 kB
+dist/assets/index-DJpErpUR.js                       176.18 kB │ gzip: 66.86 kB
+✓ built in 4.77s
+SC9_ADMIN_BUILD=PASS
+
+> face-client-v2@0.2.0 build
+> vue-tsc -b && vite build
+
+vite v7.3.6 building client environment for production...
+transforming...
+✓ 214 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.84 kB │ gzip:   0.54 kB
+dist/assets/index-Bkd9Fq7r.css   68.50 kB │ gzip:  12.43 kB
+dist/assets/index-CPtMQSqX.js   344.06 kB │ gzip: 116.59 kB
+✓ built in 1.41s
+SC9_CLIENT_BUILD=PASS
+#1 [internal] load local bake definitions
+#1 reading from stdin 564B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 735B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/maven:3.9.11-eclipse-temurin-21-alpine
+#3 DONE 0.0s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 66B done
+#4 DONE 0.0s
+
+#5 [build 1/6] FROM docker.io/library/maven:3.9.11-eclipse-temurin-21-alpine@sha256:922927df2c662cdd47ddb116443d6bec4696cfae3de1a0ddac8fcc7b87ce61ae
+#5 resolve docker.io/library/maven:3.9.11-eclipse-temurin-21-alpine@sha256:922927df2c662cdd47ddb116443d6bec4696cfae3de1a0ddac8fcc7b87ce61ae 0.0s done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 56.89kB 0.0s done
+#6 DONE 0.0s
+
+#7 [build 2/6] WORKDIR /workspace
+#7 CACHED
+
+#8 [build 3/6] COPY pom.xml ./
+#8 CACHED
+
+#9 [build 4/6] RUN mvn -B -ntp dependency:go-offline
+#9 CACHED
+
+#10 [build 5/6] COPY src ./src
+#10 CACHED
+
+#11 [build 6/6] RUN mvn -B -ntp -DskipTests package
+#11 CACHED
+
+#12 exporting to image
+#12 exporting layers done
+#12 exporting manifest sha256:bbae6658ea14d2625554c419c04b3284892d00fd7aabd2a66e9a51f195acc01c done
+#12 exporting config sha256:27ec2f326f4a21db566e086bfeb1f43fdc5df020e4755fb9127c1bec4b0d00cb done
+#12 exporting attestation manifest sha256:bbe64e0e147a575db8c2b98f8f83a1e255613134c463f4bff61a7141cf460826 0.0s done
+#12 exporting manifest list sha256:2ee79842c7b75e7e243219255d873b14f1b37fc022ba97dbea7bff500e60ad37 0.0s done
+#12 naming to docker.io/face-salon/migration:sc9-acceptance done
+#12 unpacking to docker.io/face-salon/migration:sc9-acceptance 0.0s done
+#12 DONE 0.1s
+
+#13 resolving provenance for metadata file
+#13 DONE 0.0s
+[INFO] Scanning for projects...
+[INFO]
+[INFO] --------------------< com.face:face-chain-platform >--------------------
+[INFO] Building FACE Chain Platform 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- flyway:12.4.0:migrate (default-cli) @ face-chain-platform ---
+[INFO] Database: jdbc:mysql://mysql:3306/face_salon?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true (MySQL 8.4)
+[INFO] Schema history table `face_salon`.`flyway_schema_history` does not exist yet
+[INFO] Successfully validated 43 migrations (execution time 00:00.032s)
+[INFO] Creating Schema History table `face_salon`.`flyway_schema_history` with baseline ...
+[INFO] Successfully baselined schema with version: 0
+[INFO] Executing SQL callback: beforeMigrate - legacy member compatibility
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[INFO] Current version of schema `face_salon`: 0
+[INFO] Migrating schema `face_salon` to version "2026072401 - chain foundation"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[INFO] Migrating schema `face_salon` to version "2026072402 - member center foundation"
+[INFO] Migrating schema `face_salon` to version "2026072403 - appointment center foundation"
+[INFO] Migrating schema `face_salon` to version "2026072404 - transaction center foundation"
+[INFO] Migrating schema `face_salon` to version "2026072405 - member account backfill"
+[INFO] Migrating schema `face_salon` to version "2026072406 - inventory center foundation"
+[INFO] Migrating schema `face_salon` to version "2026072407 - service care center foundation"
+[INFO] Migrating schema `face_salon` to version "2026072601 - seed complete service catalog"
+[WARNING] DB: Duplicate entry '2-1' for key 'staff_service.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '2-2' for key 'staff_service.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '2-3' for key 'staff_service.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[INFO] Migrating schema `face_salon` to version "2026072602 - seed beautician demo account"
+[INFO] Migrating schema `face_salon` to version "2026072603 - commercial upgrade foundation"
+[INFO] Migrating schema `face_salon` to version "2026072801 - item analytics foundation"
+[INFO] Migrating schema `face_salon` to version "2026072802 - v3 auth session foundation"
+[INFO] Migrating schema `face_salon` to version "2026072803 - m2 master data and resources"
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[INFO] Migrating schema `face_salon` to version "2026072804 - m3 vertical service flow"
+[INFO] Migrating schema `face_salon` to version "2026072901 - m4 package account lifecycle"
+[INFO] Migrating schema `face_salon` to version "2026072902 - m4 refund lifecycle"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026073001 - m4 purchase batch inventory"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026073002 - m4 payment adapter reconciliation"
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026073003 - m5 commission rule versioning"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026073004 - m5 commission entry lifecycle"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026073005 - m5 commission settlement"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026073006 - m5 aftersale approval"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026073007 - m5 notification"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026080101 - m6 report snapshot"
+[INFO] Migrating schema `face_salon` to version "2026080102 - m6 marketing governance"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026080103 - m6 training open platform"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026080201 - optimize public service media"
+[INFO] Migrating schema `face_salon` to version "2026080202 - isolate beautician from admin appointments"
+[INFO] Migrating schema `face_salon` to version "2026080203 - restore admin and seed care consumables"
+[INFO] Migrating schema `face_salon` to version "2026080204 - backfill completed service orders"
+[INFO] Migrating schema `face_salon` to version "2026080301 - sc2 identity content single shop"
+[INFO] Migrating schema `face_salon` to version "2026080302 - sc2 banner publish timestamp backfill"
+[INFO] Migrating schema `face_salon` to version "2026080303 - sc3 scheduling locks waitlist"
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Duplicate entry '16-9' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '16-10' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[INFO] Migrating schema `face_salon` to version "2026080304 - sc4 order cards coupon benefits"
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: Duplicate entry '16-35' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '16-34' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '16-17' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '16-13' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '16-12' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '16-31' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[WARNING] DB: Duplicate entry '16-30' for key 'role_permission.PRIMARY' (SQL State: 23000 - Error Code: 1062)
+[INFO] Migrating schema `face_salon` to version "2026080305 - sc5 points store inventory"
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026080306 - sc5 mall coupons"
+[INFO] Migrating schema `face_salon` to version "2026080307 - sc5 default points seed fallback"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026080308 - sc5 legacy owner points seed"
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026080309 - sc5 points earn and mall payment callbacks"
+[INFO] Migrating schema `face_salon` to version "2026080310 - sc6 fulfillment reviews aftersale"
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: Integer display width is deprecated and will be removed in a future release. (SQL State: HY000 - Error Code: 1681)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[WARNING] DB: 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead (SQL State: HY000 - Error Code: 1287)
+[INFO] Migrating schema `face_salon` to version "2026080311 - sc6 confirmation status width"
+[INFO] Migrating schema `face_salon` to version "2026080312 - sc6 fulfillment outcome width"
+[INFO] Migrating schema `face_salon` to version "2026080313 - sc7 legacy import"
+[INFO] Successfully applied 43 migrations to schema `face_salon`, now at version v2026080313 (execution time 00:17.769s)
+[INFO] Database: jdbc:mysql://mysql:3306/face_salon?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true (MySQL 8.4)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  20.234 s
+[INFO] Finished at: 2026-08-10T06:00:05Z
+[INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[INFO]
+[INFO] --------------------< com.face:face-chain-platform >--------------------
+[INFO] Building FACE Chain Platform 0.1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO]
+[INFO] --- flyway:12.4.0:validate (default-cli) @ face-chain-platform ---
+[INFO] Database: jdbc:mysql://mysql:3306/face_salon?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true (MySQL 8.4)
+[INFO] Successfully validated 44 migrations (execution time 00:00.051s)
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.325 s
+[INFO] Finished at: 2026-08-10T06:00:08Z
+[INFO] ------------------------------------------------------------------------
+SC9_FLYWAY_DYNAMIC_HISTORY=PASS;COUNT=43;LATEST=2026080313
+Attaching to object-init-1
+object-init-1  | Added `face` successfully.
+object-init-1  | Bucket created successfully `face/face-production`.
+object-init-1  | Access permission for `face/face-production` is set to `download`
+object-init-1  | Name      : face-production
+object-init-1  | Date      : 2026-08-10 06:00:10 UTC
+object-init-1  | Size      : N/A
+object-init-1  | Type      : folder
+object-init-1  |
+object-init-1  | Properties:
+object-init-1  |   Versioning: Un-versioned
+object-init-1  |   Location: us-east-1
+object-init-1  |   Anonymous: Enabled
+object-init-1  |   ILM: Disabled
+object-init-1  |
+object-init-1  | Usage:
+object-init-1  |       Total size: 0 B
+object-init-1  |    Objects count: 0
+object-init-1  |   Versions count: 0
+object-init-1  |
+
+[Kobject-init-1 exited with code 0
+#1 [internal] load local bake definitions
+#1 reading from stdin 2.13kB 0.0s done
+#1 DONE 0.0s
+
+#2 [admin internal] load build definition from Dockerfile
+#2 transferring dockerfile: 467B done
+#2 DONE 0.0s
+
+#3 [gateway internal] load build definition from Dockerfile
+#3 transferring dockerfile: 174B done
+#3 DONE 0.0s
+
+#4 [backend internal] load build definition from Dockerfile
+#4 transferring dockerfile: 735B done
+#4 DONE 0.1s
+
+#5 [client internal] load build definition from Dockerfile
+#5 transferring dockerfile: 650B done
+#5 DONE 0.1s
+
+#6 [backend internal] load metadata for docker.io/library/maven:3.9.11-eclipse-temurin-21-alpine
+#6 DONE 0.0s
+
+#7 [client internal] load metadata for docker.io/nginxinc/nginx-unprivileged:1.28-alpine
+#7 DONE 2.1s
+
+#8 [client internal] load metadata for docker.io/library/node:24-alpine
+#8 DONE 2.0s
+
+#9 [gateway internal] load .dockerignore
+#9 transferring context: 2B done
+#9 DONE 0.0s
+
+#10 [client internal] load .dockerignore
+#10 transferring context: 71B done
+#10 DONE 0.0s
+
+#11 [admin internal] load .dockerignore
+#11 transferring context: 71B done
+#11 DONE 0.0s
+
+#12 [gateway internal] load build context
+#12 transferring context: 43B done
+#12 DONE 0.0s
+
+#13 [admin 1/2] FROM docker.io/nginxinc/nginx-unprivileged:1.28-alpine@sha256:7377697a821c131a924a7105fafbe7414db4e9fcc77a6f08f776f33f141ec3f8
+#13 resolve docker.io/nginxinc/nginx-unprivileged:1.28-alpine@sha256:7377697a821c131a924a7105fafbe7414db4e9fcc77a6f08f776f33f141ec3f8 0.0s done
+#13 DONE 0.0s
+
+#14 [gateway 2/2] COPY --chown=nginx:nginx default.conf.template /etc/nginx/templates/default.conf.template
+#14 CACHED
+
+#15 [admin build 1/6] FROM docker.io/library/node:24-alpine@sha256:d32cdf619f63fe0471182d08996dd516c6275bb5fd31ae06e55a570bd9e1ad43
+#15 resolve docker.io/library/node:24-alpine@sha256:d32cdf619f63fe0471182d08996dd516c6275bb5fd31ae06e55a570bd9e1ad43 0.0s done
+#15 DONE 0.0s
+
+#16 [admin internal] load build context
+#16 transferring context: 4.45kB done
+#16 DONE 0.0s
+
+#17 [client internal] load build context
+#17 transferring context: 3.09kB done
+#17 DONE 0.0s
+
+#18 [gateway] exporting to image
+#18 exporting layers done
+#18 exporting manifest sha256:bc515216dfc71e69d3b1c7606e21f4b449e8548e354fa33ecb2bc663d1fed348 done
+#18 exporting config sha256:00f7dba1ae9381c557fd95877c96a2a3b91c0f0c1dccbd368a17a84394d8d694 done
+#18 exporting attestation manifest sha256:f01601edfa1da0484bd5fd9026dcb9997e40837374bdf460f7da3a566efb2825
+#18 ...
+
+#19 [admin build 5/6] COPY . .
+#19 CACHED
+
+#20 [admin build 4/6] RUN npm ci --ignore-scripts
+#20 CACHED
+
+#21 [admin build 6/6] RUN npm run build
+#21 CACHED
+
+#22 [admin stage-1 2/3] COPY nginx.conf /etc/nginx/conf.d/default.conf
+#22 CACHED
+
+#23 [admin build 3/6] COPY package.json package-lock.json ./
+#23 CACHED
+
+#24 [admin stage-1 3/3] COPY --from=build /workspace/dist /usr/share/nginx/html
+#24 CACHED
+
+#25 [client build 6/6] RUN npm run build
+#25 CACHED
+
+#26 [client build 4/6] RUN npm ci --ignore-scripts
+#26 CACHED
+
+#27 [client stage-1 2/3] COPY nginx.conf /etc/nginx/conf.d/default.conf
+#27 CACHED
+
+#28 [client build 2/6] WORKDIR /workspace
+#28 CACHED
+
+#29 [client build 5/6] COPY . .
+#29 CACHED
+
+#30 [client build 3/6] COPY package.json package-lock.json ./
+#30 CACHED
+
+#31 [client stage-1 3/3] COPY --from=build /workspace/dist /usr/share/nginx/html
+#31 CACHED
+
+#18 [gateway] exporting to image
+#18 exporting attestation manifest sha256:f01601edfa1da0484bd5fd9026dcb9997e40837374bdf460f7da3a566efb2825 0.1s done
+#18 exporting manifest list sha256:11d915d3f3424fa3899d6a25159b0f5c2ef4e38c52bbb987002ecb88f532283c 0.0s done
+#18 naming to docker.io/face-salon/prod-gateway:sc9-acceptance 0.0s done
+#18 unpacking to docker.io/face-salon/prod-gateway:sc9-acceptance
+#18 unpacking to docker.io/face-salon/prod-gateway:sc9-acceptance 0.0s done
+#18 DONE 0.2s
+
+#32 [client] exporting to image
+#32 exporting layers done
+#32 exporting manifest sha256:2c2b1912c91dab668326ed03fd02b93157a6d916b2bc68de171df1fdd83818ab done
+#32 exporting config sha256:7adf13ca4838f333b8d96618b96b28574178469a77087d98d478a16fe4f03a38 0.0s done
+#32 exporting attestation manifest sha256:049b6026af3c5bf4b55b0f521a22b34524c4910937b1b8644a96357d3d19861e 0.1s done
+#32 exporting manifest list sha256:851e215e7a69865ecd6de4332ee9214490e4d73bd2a44d7268989861cd434b42 0.0s done
+#32 naming to docker.io/face-salon/client:sc9-acceptance 0.0s done
+#32 unpacking to docker.io/face-salon/client:sc9-acceptance 0.0s done
+#32 DONE 0.3s
+
+#33 [admin] exporting to image
+#33 exporting layers done
+#33 exporting manifest sha256:23aa93e74d98aa54a2bc31eefbce48a19f2611f5ed55b5aab1b3cade6397c1ba done
+#33 exporting config sha256:de36bc3966078db5d2a3f857c8a5b94e047381383f87272a7188a1a20208d1e0 0.0s done
+#33 exporting attestation manifest sha256:997c964bed1ac78c36048148bf279668e91f17a6891e4ccef86710806fed04a2 0.1s done
+#33 exporting manifest list sha256:286b7ffd8cb99a81505ce606cef7c09dd1e60798555acc9397e9d0ff5ac11b63 0.0s done
+#33 naming to docker.io/face-salon/admin:sc9-acceptance done
+#33 unpacking to docker.io/face-salon/admin:sc9-acceptance 0.0s done
+#33 DONE 0.3s
+
+#34 [gateway] resolving provenance for metadata file
+#34 DONE 0.1s
+
+#35 [client] resolving provenance for metadata file
+#35 DONE 0.0s
+
+#36 [admin] resolving provenance for metadata file
+#36 DONE 0.0s
+
+#37 [backend internal] load metadata for docker.io/library/eclipse-temurin:21-jre-alpine
+#37 DONE 6.3s
+
+#38 [backend internal] load .dockerignore
+#38 transferring context: 66B done
+#38 DONE 0.0s
+
+#39 [backend stage-1 1/5] FROM docker.io/library/eclipse-temurin:21-jre-alpine@sha256:3f08b13888f595cc49edabea7250ba69499ba25602b267da591720769400e08c
+#39 resolve docker.io/library/eclipse-temurin:21-jre-alpine@sha256:3f08b13888f595cc49edabea7250ba69499ba25602b267da591720769400e08c 0.0s done
+#39 DONE 0.0s
+
+#40 [backend build 1/6] FROM docker.io/library/maven:3.9.11-eclipse-temurin-21-alpine@sha256:922927df2c662cdd47ddb116443d6bec4696cfae3de1a0ddac8fcc7b87ce61ae
+#40 resolve docker.io/library/maven:3.9.11-eclipse-temurin-21-alpine@sha256:922927df2c662cdd47ddb116443d6bec4696cfae3de1a0ddac8fcc7b87ce61ae 0.0s done
+#40 DONE 0.0s
+
+#41 [backend internal] load build context
+#41 transferring context: 56.89kB 0.0s done
+#41 DONE 0.1s
+
+#42 [backend stage-1 3/5] WORKDIR /app
+#42 CACHED
+
+#43 [backend build 5/6] COPY src ./src
+#43 CACHED
+
+#44 [backend stage-1 2/5] RUN apk add --no-cache curl     && addgroup -S face     && adduser -S -G face face
+#44 CACHED
+
+#45 [backend stage-1 4/5] COPY --from=build --chown=face:face /workspace/target/face-chain-platform-0.1.0-SNAPSHOT.jar /app/app.jar
+#45 CACHED
+
+#46 [backend build 2/6] WORKDIR /workspace
+#46 CACHED
+
+#47 [backend build 4/6] RUN mvn -B -ntp dependency:go-offline
+#47 CACHED
+
+#48 [backend build 6/6] RUN mvn -B -ntp -DskipTests package
+#48 CACHED
+
+#49 [backend build 3/6] COPY pom.xml ./
+#49 CACHED
+
+#50 [backend stage-1 5/5] RUN mkdir -p /app/adapters && chown face:face /app/adapters
+#50 CACHED
+
+#51 [backend] exporting to image
+#51 exporting layers done
+#51 exporting manifest sha256:45a64ed7fd3e3c5cdc05e5334da8c7ccc8bc5671c3895ed53e9d4cdd6565b46d done
+#51 exporting config sha256:0942b64ba2e13720918a8c0b4e3df32a86faabff6062d7a4ada8c77d4d2cc049 done
+#51 exporting attestation manifest sha256:5eb202a05516c2d690462ae6ba92f69839355758fcb504b2a13672e0047ce642 0.0s done
+#51 exporting manifest list sha256:1c171fc0ea0539dbfb27f267624667f617ed1643f0b1da8fc28270e536652d19 0.0s done
+#51 naming to docker.io/face-salon/backend:sc9-acceptance done
+#51 unpacking to docker.io/face-salon/backend:sc9-acceptance done
+#51 DONE 0.1s
+
+#52 [backend] resolving provenance for metadata file
+#52 DONE 0.0s
+SC9_PRODUCTION_RUNTIME=PASS
+SC9_OBJECT_STORAGE=PASS
+SC9_BACKUP=PASS;FINGERPRINT=2:0:0:44
+SC9_RESTORE_DRILL=PASS;FINGERPRINT=2:0:0:44
+SC9_RESTART=PASS
+SC9_REPEATABLE_RUN_1=PASS
+SC9_DOCKER_ACCEPTANCE_CLEANUP=PASS

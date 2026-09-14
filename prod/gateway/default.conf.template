@@ -1,0 +1,80 @@
+map $http_x_forwarded_proto $proxy_forwarded_proto {
+    default $http_x_forwarded_proto;
+    "" $scheme;
+}
+
+server {
+    listen 8080;
+    server_name ${FACE_DOMAIN};
+    server_tokens off;
+    return 308 https://${FACE_DOMAIN}:${FACE_PUBLIC_HTTPS_PORT}$request_uri;
+}
+
+server {
+    listen 8443 ssl;
+    server_name ${FACE_DOMAIN};
+    server_tokens off;
+    absolute_redirect off;
+
+    ssl_certificate /run/secrets/tls_certificate;
+    ssl_certificate_key /run/secrets/tls_private_key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_session_timeout 1d;
+    ssl_session_cache shared:FACE_TLS:10m;
+    ssl_session_tickets off;
+
+    client_max_body_size 20m;
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
+    add_header Content-Security-Policy "default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'" always;
+    add_header X-Content-Type-Options nosniff always;
+    add_header X-Frame-Options DENY always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=()" always;
+
+    location = /healthz {
+        access_log off;
+        default_type text/plain;
+        return 200 "ok\n";
+    }
+
+    location = / { return 308 /client/; }
+    location = /client { return 308 /client/; }
+    location /client/ {
+        proxy_pass http://client:8080/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location = /admin { return 308 /admin/; }
+    location /admin/ {
+        proxy_pass http://admin:8080/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+
+    location = /api { return 308 /api/; }
+    location /api/ {
+        proxy_pass http://backend:8090/face-next/api/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_read_timeout 60s;
+    }
+
+    location /objects/ {
+        proxy_pass http://object-store:9000/${OBJECT_STORAGE_BUCKET}/;
+        proxy_set_header Host object-store:9000;
+    }
+
+    location /technician/ { return 404; }
+    location /actuator/ { return 404; }
+    location / { return 404; }
+}

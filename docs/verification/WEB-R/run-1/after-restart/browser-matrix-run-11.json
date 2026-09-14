@@ -1,0 +1,135 @@
+{
+  "run": 11,
+  "mode": "restart-smoke",
+  "url": "http://127.0.0.1:9290",
+  "viewports": {
+    "mobile-portrait": {
+      "width": 390,
+      "height": 844,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护",
+          "staffPagination": {
+            "first": {
+              "cardCount": 5,
+              "cardWidths": [
+                175,
+                175,
+                175,
+                175,
+                175
+              ],
+              "pageCount": 2,
+              "currentPage": "1",
+              "nextDisabled": false
+            },
+            "second": {
+              "cardCount": 2,
+              "cardWidths": [
+                175,
+                175
+              ],
+              "currentPage": "2",
+              "nextDisabled": true
+            }
+          }
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        }
+      },
+      "adminDrawer": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      }
+    },
+    "desktop": {
+      "width": 1440,
+      "height": 960,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护",
+          "staffPagination": {
+            "first": {
+              "cardCount": 5,
+              "cardWidths": [
+                226,
+                226,
+                226,
+                226,
+                226
+              ],
+              "pageCount": 2,
+              "currentPage": "1",
+              "nextDisabled": false
+            },
+            "second": {
+              "cardCount": 2,
+              "cardWidths": [
+                226,
+                226
+              ],
+              "currentPage": "2",
+              "nextDisabled": true
+            }
+          }
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        }
+      }
+    }
+  },
+  "severeEventCount": 0,
+  "ignoredExtensionEventCount": 0,
+  "severeEvents": []
+}

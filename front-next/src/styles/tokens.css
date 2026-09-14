@@ -1,0 +1,25 @@
+:root {
+  color-scheme: light;
+  --page: #f7f6f7;
+  --surface: #ffffff;
+  --surface-strong: #faf8f9;
+  --surface-soft: #f1ecef;
+  --line: rgba(57, 36, 47, 0.13);
+  --line-strong: rgba(57, 36, 47, 0.24);
+  --text: #251b21;
+  --text-soft: #5f535a;
+  --text-muted: #776b71;
+  --rose: #a84f64;
+  --rose-strong: #8f3f54;
+  --copper: #95614d;
+  --success: #35704b;
+  --warning: #8a5a16;
+  --danger: #b7404b;
+  --focus: rgba(168, 79, 100, 0.36);
+  --shadow: 0 12px 30px rgba(45, 27, 36, 0.12);
+  --content: 1200px;
+  --header-height: 76px;
+  font-family: "PingFang SC", "Microsoft YaHei UI", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}

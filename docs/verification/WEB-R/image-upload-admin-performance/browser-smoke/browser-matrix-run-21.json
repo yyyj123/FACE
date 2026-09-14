@@ -1,0 +1,75 @@
+{
+  "run": 21,
+  "mode": "restart-smoke",
+  "url": "http://127.0.0.1:8290",
+  "viewports": {
+    "mobile-portrait": {
+      "width": 390,
+      "height": 844,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护"
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "升级总览\n\n连锁基础已经启用\n\n当前是并行迁移阶段：旧业务继续运行，新模块统一接入租户、门店和权限上下文。\n\n结构验证通过\n后端运行时\nJava 21\nSpring Boot 4.1\n数据库\nMySQ"
+        }
+      },
+      "adminDrawer": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      }
+    },
+    "desktop": {
+      "width": 1440,
+      "height": 960,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护"
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "升级总览\n\n连锁基础已经启用\n\n当前是并行迁移阶段：旧业务继续运行，新模块统一接入租户、门店和权限上下文。\n\n结构验证通过\n后端运行时\nJava 21\nSpring Boot 4.1\n数据库\nMySQ"
+        }
+      }
+    }
+  },
+  "severeEventCount": 0,
+  "ignoredExtensionEventCount": 0,
+  "severeEvents": []
+}

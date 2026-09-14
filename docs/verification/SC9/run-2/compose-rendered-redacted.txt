@@ -1,0 +1,455 @@
+name: face-prod-sc9-run-2
+services:
+  admin:
+    build:
+      context: E:\face\admin-next
+      dockerfile: Dockerfile
+      args:
+        VITE_BASE_PATH: /admin/
+        VITE_CHAIN_API: /
+    depends_on:
+      backend:
+        condition: service_healthy
+        required: true
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --tries=1
+        - --spider
+        - http://127.0.0.1:8080/healthz
+      timeout: 5s
+      interval: 10s
+      retries: 20
+    image: face-salon/admin:sc9-acceptance
+    networks:
+      application: null
+    read_only: true
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+  alertmanager:
+    command:
+      - --config.file=/etc/alertmanager/alertmanager.yml
+      - --storage.path=/alertmanager
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --tries=1
+        - --spider
+        - http://127.0.0.1:9093/-/ready
+      timeout: 5s
+      interval: 10s
+      retries: 20
+    image: prom/alertmanager:v0.28.1
+    networks:
+      monitoring: null
+    restart: unless-stopped
+    secrets:
+      - source: alert_webhook_url
+        target: /run/secrets/alert_webhook_url
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - type: bind
+        source: E:\face\prod\monitoring\alertmanager.yml
+        target: /etc/alertmanager/alertmanager.yml
+        read_only: true
+        bind: {}
+      - type: volume
+        source: alertmanager_data
+        target: /alertmanager
+        volume: {}
+  backend:
+    build:
+      context: E:\face\backend-next
+      dockerfile: Dockerfile
+    depends_on:
+      mysql:
+        condition: service_healthy
+        required: true
+      object-init:
+        condition: service_completed_successfully
+        required: true
+    environment:
+      BUSINESS_MODE: SINGLE_SHOP
+      CORS_ALLOWED_ORIGINS: https://face.local:9443
+      DB_POOL_MAX: "10"
+      DB_POOL_MIN: "2"
+      DB_URL: jdbc:mysql://mysql:3306/face_salon?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: face_app
+      DEFAULT_SHOP_ID: "1"
+      FACE_ADAPTER_DIRECTORY: /app/adapters
+      FACE_CHANNEL_EVIDENCE_DIRECTORY: /run/channel-evidence
+      FACE_PAYMENT_DEMO_MOCK_ENABLED: "false"
+      FACE_PROD_LOGISTICS_CHANNEL: disabled
+      FACE_PROD_PAYMENT_CHANNEL: disabled
+      FACE_SC6_FULFILLMENT_SCAN_MS: "1000"
+      OBJECT_STORAGE_BUCKET: face-production
+      OBJECT_STORAGE_ENDPOINT: http://object-store:9000
+      OBJECT_STORAGE_PUBLIC_BASE_URL: https://face.local:9443/objects
+      SERVER_PORT: "8090"
+      SMS_HTTP_ENDPOINT: ""
+      SMS_MODE: disabled
+      SPRING_CONFIG_IMPORT: configtree:/run/secrets/
+      SPRING_PROFILES_ACTIVE: prod
+      TZ: Asia/Shanghai
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - --fail
+        - --silent
+        - http://127.0.0.1:8090/face-next/actuator/health/readiness
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 40s
+    image: face-salon/backend:sc9-acceptance
+    networks:
+      application: null
+      database: null
+      storage: null
+    read_only: true
+    restart: unless-stopped
+    secrets:
+      - source: db_password
+        target: db_password
+      - source: sms_http_bearer_token
+        target: sms_http_bearer_token
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp
+    volumes:
+      - type: bind
+        source: E:/face/prod/adapters/installed
+        target: /app/adapters
+        read_only: true
+        bind: {}
+      - type: bind
+        source: E:/face/.runtime/sc9-channel-evidence-run-2
+        target: /run/channel-evidence
+        read_only: true
+        bind: {}
+  client:
+    build:
+      context: E:\face\front-next
+      dockerfile: Dockerfile
+      args:
+        VITE_BASE_PATH: /client/
+        VITE_CLIENT_API_BASE: /api/v2/client
+        VITE_PORTAL_MODE: customer
+        VITE_V3_API_BASE: /api/v3
+    depends_on:
+      backend:
+        condition: service_healthy
+        required: true
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --tries=1
+        - --spider
+        - http://127.0.0.1:8080/healthz
+      timeout: 5s
+      interval: 10s
+      retries: 20
+    image: face-salon/client:sc9-acceptance
+    networks:
+      application: null
+    read_only: true
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+  gateway:
+    build:
+      context: E:\face\prod\gateway
+      dockerfile: Dockerfile
+    depends_on:
+      admin:
+        condition: service_healthy
+        required: true
+      client:
+        condition: service_healthy
+        required: true
+      object-store:
+        condition: service_healthy
+        required: true
+    environment:
+      FACE_DOMAIN: face.local
+      FACE_PUBLIC_HTTPS_PORT: "9443"
+      NGINX_ENVSUBST_FILTER: ^(FACE_|OBJECT_STORAGE_)
+      OBJECT_STORAGE_BUCKET: face-production
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --no-check-certificate
+        - --quiet
+        - --tries=1
+        - --spider
+        - https://127.0.0.1:8443/healthz
+      timeout: 5s
+      interval: 10s
+      retries: 20
+    image: face-salon/prod-gateway:sc9-acceptance
+    networks:
+      application: null
+      storage: null
+    ports:
+      - mode: ingress
+        host_ip: 0.0.0.0
+        target: 8080
+        published: "9080"
+        protocol: tcp
+      - mode: ingress
+        host_ip: 0.0.0.0
+        target: 8443
+        published: "9443"
+        protocol: tcp
+    read_only: true
+    restart: unless-stopped
+    secrets:
+      - source: tls_certificate
+        target: /run/secrets/tls_certificate
+      - source: tls_private_key
+        target: /run/secrets/tls_private_key
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+      - /etc/nginx/conf.d:uid=101,gid=101,mode=0770
+  mysql:
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      - --default-time-zone=+08:00
+    environment:
+      MYSQL_DATABASE: face_salon
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+      MYSQL_USER: face_app
+      TZ: Asia/Shanghai
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - MYSQL_PWD=$$(cat /run/secrets/db_root_password) mysql -N -h 127.0.0.1 -uroot face_salon -e 'SELECT 1 FROM shop LIMIT 1' >/dev/null
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 30s
+    image: mysql:8.4
+    networks:
+      database: null
+    restart: unless-stopped
+    secrets:
+      - source: db_password
+        target: /run/secrets/db_password
+      - source: db_root_password
+        target: /run/secrets/db_root_password
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - type: volume
+        source: mysql_data
+        target: /var/lib/mysql
+        volume: {}
+      - type: bind
+        source: E:\face\docs\database\face_salon_mysql8.sql
+        target: /docker-entrypoint-initdb.d/001_face_salon_base.sql
+        read_only: true
+        bind: {}
+  object-init:
+    command:
+      - |
+        mc alias set face http://object-store:9000 "$$(cat /run/secrets/object_store_access_key)" "$$(cat /run/secrets/object_store_secret_key)"
+        mc mb --ignore-existing "face/face-production"
+        mc anonymous set download "face/face-production"
+        mc stat "face/face-production"
+    depends_on:
+      object-store:
+        condition: service_healthy
+        required: true
+    entrypoint:
+      - /bin/sh
+      - -ec
+    image: minio/mc:RELEASE.2025-04-16T18-13-26Z
+    networks:
+      storage: null
+    restart: "no"
+    secrets:
+      - source: object_store_access_key
+        target: /run/secrets/object_store_access_key
+      - source: object_store_secret_key
+        target: /run/secrets/object_store_secret_key
+    security_opt:
+      - no-new-privileges:true
+  object-store:
+    command:
+      - server
+      - /data
+      - --console-address
+      - :9001
+    environment:
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/object_store_secret_key
+      MINIO_ROOT_USER_FILE: /run/secrets/object_store_access_key
+    healthcheck:
+      test:
+        - CMD
+        - curl
+        - --fail
+        - --silent
+        - http://127.0.0.1:9000/minio/health/ready
+      timeout: 5s
+      interval: 10s
+      retries: 30
+      start_period: 20s
+    image: minio/minio:RELEASE.2025-04-22T22-12-26Z
+    networks:
+      storage: null
+    restart: unless-stopped
+    secrets:
+      - source: object_store_access_key
+        target: /run/secrets/object_store_access_key
+      - source: object_store_secret_key
+        target: /run/secrets/object_store_secret_key
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - type: volume
+        source: object_data
+        target: /data
+        volume: {}
+  prometheus:
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    depends_on:
+      alertmanager:
+        condition: service_healthy
+        required: true
+      backend:
+        condition: service_healthy
+        required: true
+      pushgateway:
+        condition: service_healthy
+        required: true
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --tries=1
+        - --spider
+        - http://127.0.0.1:9090/-/ready
+      timeout: 5s
+      interval: 10s
+      retries: 20
+    image: prom/prometheus:v3.5.0
+    networks:
+      application: null
+      monitoring: null
+    ports:
+      - mode: ingress
+        host_ip: 127.0.0.1
+        target: 9090
+        published: "19090"
+        protocol: tcp
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    volumes:
+      - type: bind
+        source: E:\face\prod\monitoring\prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+        read_only: true
+        bind: {}
+      - type: bind
+        source: E:\face\prod\monitoring\face-alerts.yml
+        target: /etc/prometheus/rules/face-alerts.yml
+        read_only: true
+        bind: {}
+      - type: volume
+        source: prometheus_data
+        target: /prometheus
+        volume: {}
+  pushgateway:
+    healthcheck:
+      test:
+        - CMD
+        - wget
+        - --quiet
+        - --tries=1
+        - --spider
+        - http://127.0.0.1:9091/-/ready
+      timeout: 5s
+      interval: 10s
+      retries: 20
+    image: prom/pushgateway:v1.11.1
+    networks:
+      monitoring: null
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+networks:
+  application:
+    name: face-prod-sc9-run-2_application
+  database:
+    name: face-prod-sc9-run-2_database
+    internal: true
+  monitoring:
+    name: face-prod-sc9-run-2_monitoring
+    internal: true
+  storage:
+    name: face-prod-sc9-run-2_storage
+    internal: true
+volumes:
+  alertmanager_data:
+    name: face-prod-sc9-run-2_alertmanager_data
+  mysql_data:
+    name: face-prod-sc9-run-2_mysql_data
+  object_data:
+    name: face-prod-sc9-run-2_object_data
+  prometheus_data:
+    name: face-prod-sc9-run-2_prometheus_data
+secrets:
+  alert_webhook_url:
+    name: face-prod-sc9-run-2_alert_webhook_url
+    file: E:/face/.runtime/sc9-secrets-run-2/alert_webhook_url
+  db_password:
+    name: face-prod-sc9-run-2_db_password
+    file: E:/face/.runtime/sc9-secrets-run-2/db_password
+  db_root_password:
+    name: face-prod-sc9-run-2_db_root_password
+    file: E:/face/.runtime/sc9-secrets-run-2/db_root_password
+  object_store_access_key:
+    name: face-prod-sc9-run-2_object_store_access_key
+    file: E:/face/.runtime/sc9-secrets-run-2/object_store_access_key
+  object_store_secret_key:
+    name: face-prod-sc9-run-2_object_store_secret_key
+    file: E:/face/.runtime/sc9-secrets-run-2/object_store_secret_key
+  sms_http_bearer_token:
+    name: face-prod-sc9-run-2_sms_http_bearer_token
+    file: E:/face/.runtime/sc9-secrets-run-2/sms_http_bearer_token
+  tls_certificate:
+    name: face-prod-sc9-run-2_tls_certificate
+    file: E:/face/.runtime/sc9-secrets-run-2/tls_certificate.pem
+  tls_private_key:
+    name: face-prod-sc9-run-2_tls_private_key
+    file: E:/face/.runtime/sc9-secrets-run-2/tls_private_key.pem

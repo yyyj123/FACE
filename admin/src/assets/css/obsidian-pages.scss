@@ -1,0 +1,978 @@
+/* Shared work-surface vocabulary for generated admin modules. */
+.main-content,
+.form-content,
+.table-content,
+.detail-form-content,
+.add-update-preview {
+  color: var(--oc-text) !important;
+}
+
+.oc-admin-page,
+.form-content,
+.table-content,
+.detail-form-content,
+.oc-form-section {
+  min-width: 0;
+  background: var(--oc-bg) !important;
+}
+
+.oc-admin-toolbar,
+.center-form-pv {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start;
+  justify-content: space-between !important;
+  gap: 12px 20px;
+  margin-bottom: 16px !important;
+  padding: 16px;
+  border: 1px solid var(--oc-border);
+  border-radius: 12px;
+  background: var(--oc-surface-1);
+}
+
+.oc-admin-filter,
+.center-form-pv > .el-row:first-child,
+.oc-admin-actions,
+.center-form-pv .actions {
+  display: flex !important;
+  flex: 1 1 auto;
+  flex-wrap: wrap !important;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 0 !important;
+}
+
+.oc-admin-filter > div,
+.center-form-pv > .el-row:first-child > div {
+  display: flex !important;
+  flex: 1 1 12rem;
+  align-items: center;
+  min-width: 12rem;
+  margin: 0 !important;
+}
+
+.center-form-pv .item-label {
+  flex: 0 0 auto;
+  min-height: 44px;
+  margin-right: 8px !important;
+  color: var(--oc-text-muted) !important;
+  line-height: 44px !important;
+}
+
+.oc-admin-actions,
+.center-form-pv .actions {
+  flex: 0 1 auto;
+  justify-content: flex-end;
+}
+
+.oc-admin-actions .del,
+.center-form-pv .actions .del {
+  order: 20;
+}
+
+.oc-admin-page > div,
+.table-content,
+.el-table__body-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.oc-admin-table,
+.tables,
+.table-content .el-table {
+  min-width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+
+.oc-admin-table .el-table__header-wrapper,
+.tables .el-table__header-wrapper,
+.table-content .el-table__header-wrapper {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+}
+
+.oc-admin-table .el-table__row > td,
+.tables .el-table__row > td {
+  height: 52px;
+}
+
+.oc-admin-table .cell,
+.tables .cell {
+  overflow-wrap: anywhere;
+}
+
+.oc-admin-table img[role="button"],
+.tables img[role="button"] {
+  min-width: 44px;
+  min-height: 44px;
+  cursor: zoom-in;
+  border-radius: 8px;
+}
+
+.oc-admin-table img[role="button"]:focus-visible,
+.tables img[role="button"]:focus-visible {
+  outline: 3px solid var(--oc-focus);
+  outline-offset: 3px;
+}
+
+.oc-admin-page .el-pagination button,
+.oc-admin-page .el-pagination .el-pager li {
+  min-width: 44px;
+  min-height: 44px;
+  line-height: 44px;
+}
+
+.oc-admin-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  color: var(--oc-text);
+  background: var(--oc-surface-2);
+}
+
+.oc-admin-empty,
+.el-table__empty-block {
+  min-height: 180px;
+  color: var(--oc-text-muted);
+  background: var(--oc-surface-1);
+}
+
+.oc-admin-form,
+.add-update-preview,
+.detail-form-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+  padding: 24px !important;
+  border: 1px solid var(--oc-border) !important;
+  border-radius: 12px !important;
+  background: var(--oc-surface-1) !important;
+}
+
+.oc-admin-form .el-form-item,
+.add-update-preview .el-form-item,
+.detail-form-content .el-form-item {
+  flex: 1 1 calc(50% - 16px);
+  min-width: 18rem;
+  margin: 0 0 16px !important;
+  padding: 0 !important;
+}
+
+.oc-admin-form .el-form-item.btn,
+.add-update-preview .el-form-item.btn {
+  flex-basis: 100%;
+  padding-top: 8px !important;
+}
+
+.add-update-preview .el-input__inner,
+.add-update-preview .el-textarea__inner,
+.detail-form-content .el-input__inner {
+  width: 100% !important;
+  min-width: 0 !important;
+  color: var(--oc-text) !important;
+  background: var(--oc-surface-2) !important;
+  border: 1px solid var(--oc-border) !important;
+  border-radius: 8px !important;
+}
+
+.add-update-preview .el-input__inner[readonly],
+.add-update-preview .is-disabled .el-input__inner {
+  cursor: not-allowed;
+  color: var(--oc-text-muted) !important;
+  background: var(--oc-surface-1) !important;
+  opacity: 0.82;
+}
+
+.add-update-preview .el-form-item__error,
+.detail-form-content .el-form-item__error {
+  position: static;
+  padding-top: 6px;
+  color: var(--oc-red);
+  line-height: 1.35;
+}
+
+.add-update-preview .el-upload,
+.add-update-preview .el-upload-list__item {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+@media (max-width: 900px) {
+  .oc-admin-page,
+  .main-content {
+    padding: 16px !important;
+  }
+
+  .oc-admin-toolbar,
+  .center-form-pv,
+  .oc-admin-form,
+  .add-update-preview,
+  .detail-form-content {
+    display: block !important;
+    flex-wrap: wrap !important;
+  }
+
+  .oc-admin-form .el-form-item,
+  .add-update-preview .el-form-item,
+  .detail-form-content .el-form-item {
+    width: 100% !important;
+    min-width: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oc-admin-page *,
+  .add-update-preview * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* Dashboard: keep data visualisations legible on the shared obsidian surface. */
+.oc-admin-main .home-content {
+  min-height: calc(100vh - 120px);
+  padding: 24px;
+  background: var(--oc-bg) !important;
+  color: var(--oc-text);
+}
+.oc-admin-main .home-content .type3 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+.oc-admin-main .home-content .echarts1,
+.oc-admin-main .home-content .echarts2,
+.oc-admin-main .home-content .echarts3 {
+  display: block;
+  width: 100% !important;
+  margin: 0 !important;
+  min-height: 360px !important;
+  background: var(--oc-surface-1) !important;
+  border: 1px solid var(--oc-border);
+  border-radius: var(--oc-radius-md);
+}
+.oc-admin-main .home-content .echarts1,
+.oc-admin-main .home-content .echarts2 { width: 100% !important; margin: 0 !important; }
+.oc-admin-main .home-content .echarts3 { grid-column: 1 / -1; }
+.oc-admin-main .home-content .echarts3 > div span { color: var(--oc-text) !important; }
+.oc-admin-main .home-content .user-top-item .nickname span,
+.oc-admin-main .home-content .user-top-item .role span { color: var(--oc-text-muted) !important; }
+.oc-admin-main .home-content .statis-box {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100% !important;
+  margin: 0 0 16px !important;
+}
+.oc-admin-main .home-content .statis-box .statis1,
+.oc-admin-main .home-content .statis-box .statis2,
+.oc-admin-main .home-content .statis-box .statis3 {
+  box-sizing: border-box;
+  display: flex !important;
+  width: 100% !important;
+  min-height: 132px !important;
+  margin: 0 !important;
+  padding: 22px !important;
+  border: 1px solid var(--oc-border) !important;
+  border-radius: var(--oc-radius-md) !important;
+  background: linear-gradient(145deg, rgba(48,34,45,.9), rgba(27,20,28,.96)) !important;
+  align-items: center;
+}
+.oc-admin-main .home-content .statis-box .left {
+  flex: 0 0 52px;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 12px !important;
+  background: var(--oc-red) !important;
+}
+.oc-admin-main .home-content .statis-box .right {
+  align-items: flex-start !important;
+  width: auto !important;
+  padding-left: 18px;
+}
+.oc-admin-main .home-content .statis-box .num {
+  color: var(--oc-text) !important;
+  font-size: 36px !important;
+  line-height: 1 !important;
+}
+.oc-admin-main .home-content .statis-box .name { color: var(--oc-text-muted) !important; }
+.oc-admin-main .home-content .user-box {
+  border-radius: var(--oc-radius-md) !important;
+  background: rgba(37,27,37,.78) !important;
+}
+.oc-admin-main button,
+.oc-admin-main .el-button {
+  transition: transform 180ms cubic-bezier(.22,1,.36,1), background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+.oc-admin-main button:not(:disabled):hover,
+.oc-admin-main .el-button:not(.is-disabled):hover { transform: translateY(-2px); }
+.oc-admin-main button:not(:disabled):active,
+.oc-admin-main .el-button:not(.is-disabled):active { transform: translateY(0) scale(.98); }
+@media (max-width: 767px) {
+  .oc-admin-main .home-content .type3 { grid-template-columns: 1fr; }
+  .oc-admin-main .home-content .statis-box { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oc-admin-main button, .oc-admin-main .el-button { transition: none !important; transform: none !important; }
+}
+
+/* Generated modules still carry scoped white table and pagination rules.
+   This final theme layer deliberately wins over those legacy declarations. */
+html body .oc-admin-main .main-content .el-table,
+html body .oc-admin-main .main-content .el-table__expanded-cell,
+html body .oc-admin-main .main-content .el-table__body-wrapper,
+html body .oc-admin-main .main-content .el-table__header-wrapper {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-row) !important;
+  border-color: var(--oc-border) !important;
+}
+
+html body .oc-admin-main .main-content .el-table th,
+html body .oc-admin-main .main-content .el-table__header-wrapper thead,
+html body .oc-admin-main .main-content .el-table__header-wrapper thead tr,
+html body .oc-admin-main .main-content .el-table__header-wrapper thead tr th {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-header) !important;
+  border-color: var(--oc-border) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__body-wrapper tbody,
+html body .oc-admin-main .main-content .el-table__body-wrapper tbody tr,
+html body .oc-admin-main .main-content .el-table__body-wrapper tbody tr td {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-row) !important;
+  border-color: var(--oc-border) !important;
+  transition: background-color var(--oc-motion-fast) ease, color var(--oc-motion-fast) ease;
+}
+
+html body .oc-admin-main .main-content .el-table__body-wrapper tbody tr.el-table__row--striped td {
+  background: var(--oc-table-stripe) !important;
+}
+
+html body .oc-admin-main .main-content .el-table--enable-row-hover .el-table__body tr:hover > td {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-hover) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__body tr.current-row > td,
+html body .oc-admin-main .main-content .el-table__body tr.hover-row > td {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-selected) !important;
+}
+
+html body .oc-admin-main .main-content .el-table .cell,
+html body .oc-admin-main .main-content .el-table__empty-text {
+  color: inherit !important;
+}
+
+/* Keep generated table labels readable even when a module has many columns. */
+html body .oc-admin-main .main-content .el-table__header-wrapper th .cell {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 8px !important;
+  overflow: visible !important;
+  color: var(--oc-text) !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  text-align: center !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  word-break: normal !important;
+}
+
+html body .oc-admin-main .main-content .el-table__header-wrapper th.is-sortable .caret-wrapper {
+  flex: 0 0 22px !important;
+  width: 22px !important;
+  margin-left: 0 !important;
+}
+
+html body .oc-admin-main .main-content .el-table__body-wrapper td .cell {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 8px 10px !important;
+  overflow: visible !important;
+  line-height: 22px !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+html body .oc-admin-main .main-content .el-table::before,
+html body .oc-admin-main .main-content .el-table--border::after,
+html body .oc-admin-main .main-content .el-table--group::after {
+  background-color: var(--oc-border) !important;
+}
+
+html body .oc-admin-main .main-content .el-checkbox__inner {
+  background: var(--oc-surface-2) !important;
+  border-color: #725565 !important;
+}
+
+html body .oc-admin-main .main-content .el-checkbox__input.is-checked .el-checkbox__inner,
+html body .oc-admin-main .main-content .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+  background: var(--oc-red) !important;
+  border-color: var(--oc-red) !important;
+}
+
+html body .oc-admin-main .main-content .el-pagination {
+  width: min(100%, 760px) !important;
+  min-width: 0 !important;
+  color: var(--oc-text-muted) !important;
+  background: var(--oc-surface-1) !important;
+  border: 1px solid var(--oc-border) !important;
+  box-shadow: none !important;
+}
+
+html body .oc-admin-main .main-content .el-pagination button,
+html body .oc-admin-main .main-content .el-pagination .el-pager li,
+html body .oc-admin-main .main-content .el-pagination .el-input__inner {
+  color: var(--oc-text) !important;
+  background: var(--oc-surface-2) !important;
+  border-color: var(--oc-border) !important;
+}
+
+html body .oc-admin-main .main-content .el-pagination .el-pager li.active {
+  color: #fff !important;
+  background: var(--oc-red) !important;
+}
+
+html body .oc-admin-main .main-content .el-pagination button:disabled {
+  color: #867681 !important;
+  background: #201820 !important;
+}
+
+html body .oc-admin-main .main-content .el-table__body-wrapper::-webkit-scrollbar-track {
+  background: var(--oc-surface-1) !important;
+}
+html body .oc-admin-main .main-content .el-table__body-wrapper::-webkit-scrollbar-thumb {
+  background: #725565 !important;
+  border: 3px solid var(--oc-surface-1);
+  border-radius: 999px;
+}
+html body .oc-admin-main .main-content .el-table__body-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: #725565 var(--oc-surface-1);
+}
+html body .oc-admin-main .main-content .el-table__body-wrapper::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+  background: var(--oc-surface-1) !important;
+}
+
+/* Stable two-row admin toolbar: expanding actions never squeeze form fields. */
+html body .oc-admin-main .main-content .center-form-pv.center-form-pv,
+html body .oc-admin-main .main-content .oc-admin-toolbar.oc-admin-toolbar {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 14px !important;
+  width: 100% !important;
+  padding: 18px !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter,
+html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px 16px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter > div,
+html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child > div {
+  display: grid !important;
+  grid-template-columns: max-content minmax(140px, 1fr) !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex: 1 1 260px !important;
+  min-width: 230px !important;
+  margin: 0 !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .item-label {
+  display: flex !important;
+  align-items: center !important;
+  min-width: max-content !important;
+  height: 50px !important;
+  margin: 0 !important;
+  color: var(--oc-text-muted) !important;
+  line-height: 1.35 !important;
+  white-space: nowrap !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .el-input,
+html body .oc-admin-main .main-content .center-form-pv .el-select {
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .el-input__inner {
+  box-sizing: border-box !important;
+  height: 50px !important;
+  padding: 0 14px !important;
+  border: 1px solid var(--oc-border) !important;
+  border-radius: var(--oc-radius-sm) !important;
+  background: var(--oc-surface-2) !important;
+  color: var(--oc-text) !important;
+  line-height: 50px !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .el-input__inner::placeholder {
+  color: var(--oc-text-muted) !important;
+  opacity: .82;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .oc-admin-actions,
+html body .oc-admin-main .main-content .center-form-pv .actions {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  min-height: 50px !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .el-button + .el-button {
+  margin-left: 0 !important;
+}
+
+html body .oc-admin-main .main-content .el-loading-mask {
+  background: rgba(14, 10, 15, .82) !important;
+}
+
+html body .oc-admin-main .main-content .el-loading-spinner .path {
+  stroke: var(--oc-gold) !important;
+}
+
+html body .oc-admin-main .main-content .el-loading-spinner .el-loading-text {
+  color: var(--oc-text-muted) !important;
+}
+
+html body .oc-admin-main .main-content .el-pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  padding: 14px 18px !important;
+}
+
+html body .oc-admin-main .main-content .el-pagination > * {
+  float: none !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 760px) {
+  html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter > div,
+  html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child > div {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    min-width: 100% !important;
+  }
+  html body .oc-admin-main .main-content .center-form-pv .item-label { height: auto !important; min-height: 24px !important; }
+}
+html body .oc-admin-main .main-content .el-table__body-wrapper::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: var(--oc-surface-1) !important;
+}
+html body .oc-admin-main .main-content .el-table__body-wrapper::-webkit-scrollbar-corner {
+  background: var(--oc-surface-1) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed,
+html body .oc-admin-main .main-content .el-table__fixed-right,
+html body .oc-admin-main .main-content .el-table__fixed::before,
+html body .oc-admin-main .main-content .el-table__fixed-right::before {
+  background: var(--oc-table-row) !important;
+}
+
+/*
+ * Element UI renders fixed columns as cloned tables outside the normal body
+ * wrapper. Theme every layer of those clones so legacy white cell borders can
+ * never show through on first/last columns.
+ */
+html body .oc-admin-main .main-content .el-table__fixed,
+html body .oc-admin-main .main-content .el-table__fixed-right {
+  box-shadow: none !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-header-wrapper,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-row) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-header-wrapper table,
+html body .oc-admin-main .main-content .el-table__fixed-header-wrapper thead,
+html body .oc-admin-main .main-content .el-table__fixed-header-wrapper tr,
+html body .oc-admin-main .main-content .el-table__fixed-header-wrapper th,
+html body .oc-admin-main .main-content .el-table__fixed-right-patch {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-header) !important;
+  border-color: var(--oc-border) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper table,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tbody,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tr,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper td {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-row) !important;
+  border-color: var(--oc-border) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tr.el-table__row--striped td {
+  background: var(--oc-table-stripe) !important;
+}
+
+html body .oc-admin-main .main-content .el-table--enable-row-hover .el-table__fixed-body-wrapper tr:hover > td {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-hover) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tr.current-row > td,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tr.hover-row > td {
+  color: var(--oc-text) !important;
+  background: var(--oc-table-selected) !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-header-wrapper th .cell {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding: 0 8px !important;
+  overflow: visible !important;
+  color: var(--oc-text) !important;
+  line-height: 20px !important;
+  text-align: center !important;
+  white-space: normal !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper td .cell {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding: 8px 10px !important;
+  overflow: visible !important;
+  color: var(--oc-text) !important;
+  line-height: 22px !important;
+  text-align: center !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+}
+
+html body .oc-revenue-dialog {
+  max-width: calc(100vw - 32px);
+  border: 1px solid var(--oc-border) !important;
+  border-radius: 16px !important;
+  background: var(--oc-surface-1) !important;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .52) !important;
+}
+
+html body .oc-revenue-dialog .el-dialog__header {
+  padding: 20px 24px !important;
+  border-bottom: 1px solid var(--oc-border) !important;
+}
+
+html body .oc-revenue-dialog .el-dialog__title {
+  color: var(--oc-text) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+}
+
+html body .oc-revenue-dialog .el-dialog__body {
+  padding: 18px 24px 8px !important;
+  color: var(--oc-text) !important;
+  background: var(--oc-surface-1) !important;
+}
+
+html body .oc-revenue-dialog .el-dialog__footer {
+  padding: 12px 24px 20px !important;
+  border-top: 1px solid var(--oc-border) !important;
+}
+
+/*
+ * All admin modules share the same two-tier toolbar:
+ * filters first; create/delete/search and secondary actions second.
+ * `display: contents` lets generated buttons from both legacy rows take part
+ * in one grid without changing each module's business template.
+ */
+html body .oc-admin-main .main-content .center-form-pv.center-form-pv {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px 18px !important;
+  align-items: center !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv::before {
+  content: '' !important;
+  display: block !important;
+  grid-column: 1 / -1 !important;
+  order: 5;
+  width: 100% !important;
+  height: 1px !important;
+  margin: 2px 0 !important;
+  background: var(--oc-border) !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv::after {
+  display: none !important;
+  content: none !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter,
+html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child,
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-actions,
+html body .oc-admin-main .main-content .center-form-pv > .actions {
+  display: contents !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv > .el-row::before,
+html body .oc-admin-main .main-content .center-form-pv > .el-row::after {
+  display: none !important;
+  content: none !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter > div,
+html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child > div {
+  box-sizing: border-box !important;
+  order: 0;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .actions > .el-button,
+html body .oc-admin-main .main-content .center-form-pv .oc-admin-actions > .el-button {
+  order: 20;
+  justify-self: start;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .actions > .add,
+html body .oc-admin-main .main-content .center-form-pv .oc-admin-actions > .add {
+  order: 10;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .actions > .del,
+html body .oc-admin-main .main-content .center-form-pv .oc-admin-actions > .del {
+  order: 15;
+}
+
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter > .search,
+html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child > .search {
+  order: 30;
+  justify-self: start;
+}
+
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter > .reset,
+html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child > .reset {
+  order: 35;
+  justify-self: start;
+}
+
+@media (max-width: 1279px) {
+  html body .oc-admin-main .main-content .center-form-pv.center-form-pv {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Nursing package filters own their structure; legacy inline widths cannot re-enter. */
+html body .oc-admin-main .service-package-page .package-toolbar.center-form-pv {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  width: 100% !important;
+  padding: 18px !important;
+}
+
+html body .oc-admin-main .service-package-page .package-filter-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+html body .oc-admin-main .service-package-page .package-filter-field {
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  gap: 8px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+html body .oc-admin-main .service-package-page .package-filter-field .item-label {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 22px !important;
+  height: auto !important;
+  margin: 0 !important;
+  line-height: 1.45 !important;
+  white-space: normal !important;
+}
+
+html body .oc-admin-main .service-package-page .package-filter-field .el-input,
+html body .oc-admin-main .service-package-page .package-filter-field .el-select,
+html body .oc-admin-main .service-package-page .package-filter-field .el-input__inner {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+html body .oc-admin-main .service-package-page .package-actions {
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  min-height: 68px !important;
+  padding-top: 16px !important;
+  border-top: 1px solid var(--oc-border) !important;
+}
+
+@media (max-width: 1399px) {
+  html body .oc-admin-main .service-package-page .package-filter-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  html body .oc-admin-main .service-package-page .package-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  html body .oc-admin-main .service-package-page .package-filter-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+/* Consistent data-table reading axis across every management module. */
+html body .oc-admin-main .main-content .el-table th,
+html body .oc-admin-main .main-content .el-table td {
+  vertical-align: middle !important;
+  text-align: center !important;
+}
+
+html body .oc-admin-main .main-content .el-table th > .cell,
+html body .oc-admin-main .main-content .el-table td > .cell {
+  text-align: center !important;
+}
+
+html body .oc-admin-main .main-content .el-table th > .cell,
+html body .oc-admin-main .main-content .el-table td > .cell {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+/*
+ * Keep Element UI's main table and cloned fixed columns on the same reading
+ * axis. The rule intentionally does not depend on a parent selector: the
+ * direct row/cell selector is more specific and previously left action cells
+ * as implicit grid rows, making the main table taller than the fixed clones.
+ */
+html body .oc-admin-main .main-content .el-table__body tr.el-table__row,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tr.el-table__row {
+  height: 120px !important;
+}
+
+html body .oc-admin-main .main-content .el-table__body tr.el-table__row > td,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tr.el-table__row > td {
+  box-sizing: border-box !important;
+  height: 120px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html body .oc-admin-main .main-content .el-table__body tr.el-table__row > td > .cell,
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper tr.el-table__row > td > .cell {
+  box-sizing: border-box !important;
+  display: flex !important;
+  width: 100% !important;
+  height: 119px !important;
+  min-height: 119px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-content: center !important;
+  flex-wrap: wrap !important;
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
+}
+
+html body .oc-admin-main .main-content .el-table__fixed-right .el-table__fixed-body-wrapper td > .cell {
+  overflow: visible !important;
+  gap: 6px !important;
+}
+
+html body .oc-admin-main .main-content .el-table td > .cell > .el-button:not(.is-circle),
+html body .oc-admin-main .main-content .el-table__fixed-body-wrapper td > .cell > .el-button:not(.is-circle) {
+  --action-width: 82px;
+  --action-size: 38px;
+  margin: 0 !important;
+}
+
+/* Labels sit above their fields so dense filter rows cannot overlap. */
+html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter > div,
+html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child > div {
+  grid-template-columns: minmax(0, 1fr) !important;
+  align-items: stretch !important;
+  gap: 7px !important;
+}
+
+html body .oc-admin-main .main-content .center-form-pv .item-label {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 22px !important;
+  height: auto !important;
+  line-height: 1.45 !important;
+}
+
+@media (max-width: 760px) {
+  html body .oc-admin-main .main-content .center-form-pv.center-form-pv {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 12px !important;
+  }
+
+  html body .oc-admin-main .main-content .center-form-pv .actions > .el-button,
+  html body .oc-admin-main .main-content .center-form-pv .oc-admin-actions > .el-button,
+  html body .oc-admin-main .main-content .center-form-pv > .oc-admin-filter > .el-button,
+  html body .oc-admin-main .main-content .center-form-pv > .el-row:first-child > .el-button {
+    justify-self: start;
+  }
+}

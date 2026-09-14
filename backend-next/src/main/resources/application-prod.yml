@@ -1,0 +1,33 @@
+spring:
+  config:
+    import: ${SPRING_CONFIG_IMPORT:configtree:/run/secrets/}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      group:
+        readiness:
+          include: readinessState,db,databaseContract,objectStorage
+
+face:
+  payment:
+    demo-mock:
+      enabled: false
+      secret: ""
+    sandbox-secret: ""
+  sms:
+    mode: disabled
+  object-storage:
+    endpoint: ${OBJECT_STORAGE_ENDPOINT:http://object-store:9000}
+    bucket: ${OBJECT_STORAGE_BUCKET:face-production}
+    public-base-url: ${OBJECT_STORAGE_PUBLIC_BASE_URL:}
+  production:
+    adapter-directory: ${FACE_ADAPTER_DIRECTORY:/app/adapters}
+    channel-evidence-directory: ${FACE_CHANNEL_EVIDENCE_DIRECTORY:/run/channel-evidence}
+    channels:
+      payment: ${FACE_PROD_PAYMENT_CHANNEL:disabled}
+      logistics: ${FACE_PROD_LOGISTICS_CHANNEL:disabled}

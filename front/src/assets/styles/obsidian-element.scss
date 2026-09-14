@@ -1,0 +1,199 @@
+/* Shared Element UI cockpit skin. Keep this file token-driven. */
+body {
+  background: var(--oc-bg);
+  color: var(--oc-text);
+}
+
+.oc-app {
+  min-height: 100%;
+  background: var(--oc-bg);
+  color: var(--oc-text);
+}
+
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--oc-focus);
+  outline-offset: 3px;
+}
+
+.el-button {
+  min-height: 44px;
+  border-color: var(--oc-border);
+  border-radius: var(--oc-radius-sm);
+  background: var(--oc-surface-2);
+  color: var(--oc-text);
+  transition: transform var(--oc-motion-fast) ease-out, border-color var(--oc-motion-fast) ease-out, background-color var(--oc-motion-fast) ease-out;
+}
+.el-button:hover,
+.el-button:focus {
+  border-color: var(--oc-gold);
+  background: var(--oc-surface-1);
+  color: var(--oc-gold);
+}
+.el-button:active { transform: translateY(1px); }
+.el-button.is-disabled,
+.el-button.is-disabled:hover {
+  border-color: var(--oc-border);
+  background: var(--oc-surface-2);
+  color: var(--oc-text-muted);
+  opacity: .52;
+}
+.el-button--primary {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #ef5960;
+  background: var(--oc-red);
+  color: var(--oc-text);
+}
+.el-button--primary::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, .22) 50%, transparent 65%);
+  content: "";
+  pointer-events: none;
+  transform: translateX(-110%);
+}
+.el-button--primary:hover,
+.el-button--primary:focus {
+  border-color: #ff7379;
+  background: var(--oc-red);
+  color: var(--oc-text);
+  filter: brightness(1.06);
+}
+.el-button--primary:hover::after { animation: oc-edge-sweep var(--oc-motion-base) ease-out 1; }
+.el-button--primary.is-disabled::after,
+.el-button--primary.is-loading::after { display: none; }
+.el-button--danger { border-color: var(--oc-red); color: #ff858a; }
+.el-button--success { border-color: #4f9871; color: #8fd5ad; }
+
+.el-input__inner,
+.el-textarea__inner {
+  min-height: 44px;
+  border-color: var(--oc-border);
+  border-radius: var(--oc-radius-sm);
+  background: var(--oc-surface-1);
+  color: var(--oc-text);
+  caret-color: var(--oc-gold);
+  transition: border-color var(--oc-motion-fast) ease-out, box-shadow var(--oc-motion-fast) ease-out;
+}
+.el-input__inner::placeholder,
+.el-textarea__inner::placeholder { color: var(--oc-text-muted); opacity: 1; }
+.el-input__inner:hover,
+.el-textarea__inner:hover { border-color: rgba(185, 164, 119, .65); }
+.el-input__inner:focus,
+.el-textarea__inner:focus {
+  border-color: var(--oc-focus);
+  box-shadow: inset 0 0 0 1px var(--oc-focus);
+}
+.el-input.is-disabled .el-input__inner,
+.el-textarea.is-disabled .el-textarea__inner {
+  border-color: var(--oc-border);
+  background: var(--oc-surface-2);
+  color: var(--oc-text-muted);
+  opacity: .58;
+}
+.el-form-item.is-error .el-input__inner,
+.el-form-item.is-error .el-textarea__inner { border-color: #ff6b71; box-shadow: inset 0 0 0 1px #ff6b71; }
+.el-form-item__error { color: #ff8e92; }
+
+.el-select-dropdown,
+.el-dropdown-menu,
+.el-picker-panel {
+  border-color: var(--oc-border);
+  border-radius: var(--oc-radius-sm);
+  background: var(--oc-surface-2);
+  color: var(--oc-text);
+}
+.el-select-dropdown__item,
+.el-dropdown-menu__item { min-height: 44px; color: var(--oc-text); line-height: 44px; }
+.el-select-dropdown__item.hover,
+.el-select-dropdown__item:hover,
+.el-dropdown-menu__item:hover { background: var(--oc-surface-1); color: var(--oc-gold); }
+.el-select-dropdown__item.selected { color: var(--oc-gold); }
+.popper__arrow,
+.popper__arrow::after { border-bottom-color: var(--oc-surface-2) !important; }
+
+.el-table,
+.el-table th,
+.el-table tr,
+.el-table td {
+  border-color: var(--oc-border);
+  background: var(--oc-surface-1);
+  color: var(--oc-text);
+}
+.el-table::before,
+.el-table--border::after { background-color: var(--oc-border); }
+.el-table th { background: var(--oc-surface-2); color: var(--oc-text-muted); }
+.el-table--enable-row-hover .el-table__body tr:hover > td { background: var(--oc-surface-2); }
+.el-table__body tr.current-row > td { background: rgba(185, 164, 119, .13); color: var(--oc-gold); }
+.el-table__empty-block { background: var(--oc-surface-1); }
+.el-table__empty-text { color: var(--oc-text-muted); }
+
+.el-dialog,
+.el-message-box {
+  border: 1px solid var(--oc-border);
+  border-radius: var(--oc-radius-md);
+  background: var(--oc-surface-1);
+  color: var(--oc-text);
+}
+.el-dialog__title,
+.el-message-box__title,
+.el-dialog__body,
+.el-message-box__content { color: var(--oc-text); }
+.el-dialog__headerbtn,
+.el-message-box__headerbtn { min-width: 44px; min-height: 44px; }
+.v-modal { background: #030405; opacity: .76; }
+
+.el-pagination { color: var(--oc-text-muted); }
+.el-pagination button,
+.el-pager li {
+  min-width: 44px;
+  height: 44px;
+  border-radius: var(--oc-radius-sm);
+  background: var(--oc-surface-2);
+  color: var(--oc-text);
+  line-height: 44px;
+}
+.el-pager li:hover,
+.el-pager li.active { color: var(--oc-gold); }
+.el-pagination button:disabled { color: var(--oc-text-muted); opacity: .5; }
+
+.el-tabs__nav-wrap::after { background: var(--oc-border); }
+.el-tabs__item { min-height: 44px; color: var(--oc-text-muted); }
+.el-tabs__item:hover,
+.el-tabs__item.is-active { color: var(--oc-gold); }
+.el-tabs__active-bar { background: var(--oc-gold); }
+
+.el-badge__content {
+  border-color: var(--oc-surface-1);
+  background: var(--oc-red);
+  color: var(--oc-text);
+}
+.el-tag {
+  border-color: var(--oc-border);
+  background: var(--oc-surface-2);
+  color: var(--oc-text);
+}
+.el-tag--success { border-color: #4f9871; color: #8fd5ad; }
+.el-tag--danger { border-color: var(--oc-red); color: #ff8e92; }
+
+.el-loading-mask { background: rgba(9, 11, 14, .84); }
+.el-loading-spinner .path { stroke: var(--oc-gold); animation-duration: .8s; }
+.el-loading-spinner .el-loading-text { color: var(--oc-text); }
+.el-empty__description p { color: var(--oc-text-muted); }
+.el-alert { border-radius: var(--oc-radius-sm); }
+.el-alert--error { border: 1px solid rgba(255, 107, 113, .45); background: rgba(225, 38, 47, .14); color: #ffadb0; }
+.el-alert--success { border: 1px solid rgba(79, 152, 113, .5); background: rgba(79, 152, 113, .14); color: #a9dfbf; }
+
+@keyframes oc-edge-sweep {
+  to { transform: translateX(110%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+

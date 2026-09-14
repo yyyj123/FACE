@@ -1,0 +1,319 @@
+name: face-production
+
+services:
+  mysql:
+    image: mysql:8.4
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: face_salon
+      MYSQL_USER: face_app
+      MYSQL_PASSWORD_FILE: /run/secrets/db_password
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/db_root_password
+      TZ: Asia/Shanghai
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_0900_ai_ci
+      - --default-time-zone=+08:00
+    secrets:
+      - db_password
+      - db_root_password
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./docs/database/face_salon_mysql8.sql:/docker-entrypoint-initdb.d/001_face_salon_base.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "MYSQL_PWD=$$(cat /run/secrets/db_root_password) mysql -N -h 127.0.0.1 -uroot face_salon -e 'SELECT 1 FROM shop LIMIT 1' >/dev/null"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 30s
+    networks: [database]
+    security_opt: [no-new-privileges:true]
+
+  migration:
+    image: face-salon/migration:${FACE_IMAGE_TAG:-production}
+    build:
+      context: ./backend-next
+      dockerfile: Dockerfile
+      target: build
+    entrypoint: ["/bin/sh", "-ec", "export FLYWAY_PASSWORD=$$(cat /run/secrets/db_root_password); exec mvn -B -ntp \"$$@\"", "--"]
+    environment:
+      FLYWAY_URL: jdbc:mysql://mysql:3306/face_salon?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      FLYWAY_USER: root
+      FLYWAY_LOCATIONS: filesystem:/workspace/src/main/resources/db/migration
+      FLYWAY_CONNECT_RETRIES: 30
+      FLYWAY_BASELINE_ON_MIGRATE: "true"
+      FLYWAY_BASELINE_VERSION: "0"
+    secrets: [db_root_password]
+    depends_on:
+      mysql: { condition: service_healthy }
+    networks: [database]
+    profiles: [tools]
+    security_opt: [no-new-privileges:true]
+
+  object-store:
+    image: minio/minio:RELEASE.2025-04-22T22-12-26Z
+    restart: unless-stopped
+    command: ["server", "/data", "--console-address", ":9001"]
+    environment:
+      MINIO_ROOT_USER_FILE: /run/secrets/object_store_access_key
+      MINIO_ROOT_PASSWORD_FILE: /run/secrets/object_store_secret_key
+    secrets:
+      - object_store_access_key
+      - object_store_secret_key
+    volumes: [object_data:/data]
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:9000/minio/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 20s
+    networks: [storage]
+    security_opt: [no-new-privileges:true]
+
+  object-init:
+    image: minio/mc:RELEASE.2025-04-16T18-13-26Z
+    restart: "no"
+    entrypoint: ["/bin/sh", "-ec"]
+    command:
+      - |
+        mc alias set face http://object-store:9000 "$$(cat /run/secrets/object_store_access_key)" "$$(cat /run/secrets/object_store_secret_key)"
+        mc mb --ignore-existing "face/${OBJECT_STORAGE_BUCKET:-face-production}"
+        mc anonymous set download "face/${OBJECT_STORAGE_BUCKET:-face-production}"
+        mc stat "face/${OBJECT_STORAGE_BUCKET:-face-production}"
+    secrets:
+      - object_store_access_key
+      - object_store_secret_key
+    depends_on:
+      object-store: { condition: service_healthy }
+    networks: [storage]
+    security_opt: [no-new-privileges:true]
+
+  backend:
+    image: face-salon/backend:${FACE_IMAGE_TAG:-production}
+    build:
+      context: ./backend-next
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SPRING_CONFIG_IMPORT: configtree:/run/secrets/
+      SERVER_PORT: 8090
+      DB_URL: jdbc:mysql://mysql:3306/face_salon?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true
+      DB_USERNAME: face_app
+      DB_POOL_MAX: ${FACE_DB_POOL_MAX:-20}
+      DB_POOL_MIN: ${FACE_DB_POOL_MIN:-4}
+      BUSINESS_MODE: ${BUSINESS_MODE:-SINGLE_SHOP}
+      DEFAULT_SHOP_ID: ${DEFAULT_SHOP_ID:-1}
+      CORS_ALLOWED_ORIGINS: ${FACE_PUBLIC_ORIGIN:?FACE_PUBLIC_ORIGIN is required}
+      OBJECT_STORAGE_ENDPOINT: http://object-store:9000
+      OBJECT_STORAGE_BUCKET: ${OBJECT_STORAGE_BUCKET:-face-production}
+      OBJECT_STORAGE_PUBLIC_BASE_URL: ${OBJECT_STORAGE_PUBLIC_BASE_URL:?OBJECT_STORAGE_PUBLIC_BASE_URL is required}
+      SMS_MODE: ${SMS_MODE:-disabled}
+      SMS_HTTP_ENDPOINT: ${SMS_HTTP_ENDPOINT:-}
+      FACE_PROD_PAYMENT_CHANNEL: ${FACE_PROD_PAYMENT_CHANNEL:-disabled}
+      FACE_PROD_LOGISTICS_CHANNEL: ${FACE_PROD_LOGISTICS_CHANNEL:-disabled}
+      FACE_PAYMENT_DEMO_MOCK_ENABLED: "false"
+      FACE_ADAPTER_DIRECTORY: /app/adapters
+      FACE_CHANNEL_EVIDENCE_DIRECTORY: /run/channel-evidence
+      FACE_SC6_FULFILLMENT_SCAN_MS: ${FACE_SC6_FULFILLMENT_SCAN_MS:-300000}
+      TZ: Asia/Shanghai
+    secrets:
+      - source: db_password
+        target: db_password
+      - source: sms_http_bearer_token
+        target: sms_http_bearer_token
+    volumes:
+      - ${FACE_ADAPTER_DIR:?FACE_ADAPTER_DIR is required}:/app/adapters:ro
+      - ${FACE_CHANNEL_EVIDENCE_DIR:?FACE_CHANNEL_EVIDENCE_DIR is required}:/run/channel-evidence:ro
+    read_only: true
+    tmpfs: [/tmp]
+    depends_on:
+      mysql: { condition: service_healthy }
+      object-init: { condition: service_completed_successfully }
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "http://127.0.0.1:8090/face-next/actuator/health/readiness"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 40s
+    networks: [application, database, storage]
+    security_opt: [no-new-privileges:true]
+
+  admin:
+    image: face-salon/admin:${FACE_IMAGE_TAG:-production}
+    build:
+      context: ./admin-next
+      dockerfile: Dockerfile
+      args:
+        VITE_CHAIN_API: /
+        VITE_BASE_PATH: /admin/
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/var/cache/nginx, /var/run, /tmp]
+    depends_on:
+      backend: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks: [application]
+    security_opt: [no-new-privileges:true]
+
+  client:
+    image: face-salon/client:${FACE_IMAGE_TAG:-production}
+    build:
+      context: ./front-next
+      dockerfile: Dockerfile
+      args:
+        VITE_PORTAL_MODE: customer
+        VITE_BASE_PATH: /client/
+        VITE_CLIENT_API_BASE: /api/v2/client
+        VITE_V3_API_BASE: /api/v3
+    restart: unless-stopped
+    read_only: true
+    tmpfs: [/var/cache/nginx, /var/run, /tmp]
+    depends_on:
+      backend: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks: [application]
+    security_opt: [no-new-privileges:true]
+
+  technician:
+    image: face-salon/technician:${FACE_IMAGE_TAG:-production}
+    profiles:
+      - frozen
+    networks: [application]
+
+  gateway:
+    image: face-salon/prod-gateway:${FACE_IMAGE_TAG:-production}
+    build: { context: ./prod/gateway }
+    restart: unless-stopped
+    environment:
+      FACE_DOMAIN: ${FACE_DOMAIN:?FACE_DOMAIN is required}
+      FACE_PUBLIC_HTTPS_PORT: ${FACE_HTTPS_PORT:-443}
+      OBJECT_STORAGE_BUCKET: ${OBJECT_STORAGE_BUCKET:-face-production}
+      NGINX_ENVSUBST_FILTER: ^(FACE_|OBJECT_STORAGE_)
+    ports:
+      - "0.0.0.0:${FACE_HTTP_PORT:?FACE_HTTP_PORT is required}:8080"
+      - "0.0.0.0:${FACE_HTTPS_PORT:?FACE_HTTPS_PORT is required}:8443"
+    secrets:
+      - source: tls_certificate
+        target: /run/secrets/tls_certificate
+      - source: tls_private_key
+        target: /run/secrets/tls_private_key
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+      - /etc/nginx/conf.d:uid=101,gid=101,mode=0770
+    depends_on:
+      admin: { condition: service_healthy }
+      client: { condition: service_healthy }
+      object-store: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "wget", "--no-check-certificate", "--quiet", "--tries=1", "--spider", "https://127.0.0.1:8443/healthz"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks: [application, storage]
+    security_opt: [no-new-privileges:true]
+
+  prometheus:
+    image: prom/prometheus:v3.5.0
+    restart: unless-stopped
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --storage.tsdb.path=/prometheus
+      - --web.enable-lifecycle
+    ports:
+      - "127.0.0.1:${FACE_PROMETHEUS_PORT:?FACE_PROMETHEUS_PORT is required}:9090"
+    volumes:
+      - ./prod/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./prod/monitoring/face-alerts.yml:/etc/prometheus/rules/face-alerts.yml:ro
+      - prometheus_data:/prometheus
+    depends_on:
+      backend: { condition: service_healthy }
+      alertmanager: { condition: service_healthy }
+      pushgateway: { condition: service_healthy }
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:9090/-/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks: [application, monitoring]
+    security_opt: [no-new-privileges:true]
+
+  alertmanager:
+    image: prom/alertmanager:v0.28.1
+    restart: unless-stopped
+    command: ["--config.file=/etc/alertmanager/alertmanager.yml", "--storage.path=/alertmanager"]
+    volumes:
+      - ./prod/monitoring/alertmanager.yml:/etc/alertmanager/alertmanager.yml:ro
+      - alertmanager_data:/alertmanager
+    secrets: [alert_webhook_url]
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:9093/-/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks: [monitoring]
+    security_opt: [no-new-privileges:true]
+
+  pushgateway:
+    image: prom/pushgateway:v1.11.1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:9091/-/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+    networks: [monitoring]
+    security_opt: [no-new-privileges:true]
+
+  object-cli:
+    image: minio/mc:RELEASE.2025-04-16T18-13-26Z
+    entrypoint: ["/bin/sh", "-ec"]
+    secrets:
+      - object_store_access_key
+      - object_store_secret_key
+    volumes:
+      - ${FACE_BACKUP_DIR:?FACE_BACKUP_DIR is required}:/backup
+    networks: [storage]
+    profiles: [tools]
+    security_opt: [no-new-privileges:true]
+
+volumes:
+  mysql_data:
+  object_data:
+  prometheus_data:
+  alertmanager_data:
+
+networks:
+  application:
+  database: { internal: true }
+  storage: { internal: true }
+  monitoring: { internal: true }
+
+secrets:
+  db_password:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/db_password
+  db_root_password:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/db_root_password
+  object_store_access_key:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/object_store_access_key
+  object_store_secret_key:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/object_store_secret_key
+  sms_http_bearer_token:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/sms_http_bearer_token
+  tls_certificate:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/tls_certificate.pem
+  tls_private_key:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/tls_private_key.pem
+  alert_webhook_url:
+    file: ${FACE_SECRET_DIR:?FACE_SECRET_DIR is required}/alert_webhook_url

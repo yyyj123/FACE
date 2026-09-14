@@ -1,0 +1,17 @@
+{
+  "name": "face-salon-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/start-face-all.ps1",
+    "start:next": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/start-face-next.ps1",
+    "build:next": "mvn -q -f ./backend-next/pom.xml package && npm --prefix ./admin-next run build && npm --prefix ./front-next run build",
+    "verify:chain": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-chain-foundation.ps1",
+    "verify:members": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-member-center.ps1",
+    "verify:appointments": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-appointment-center.ps1",
+    "verify:transactions": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-transaction-center.ps1",
+    "verify:inventory": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-inventory-center.ps1",
+    "verify:services": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-service-care-center.ps1",
+    "verify:client": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File ./scripts/verify-client-v2.ps1"
+  }
+}

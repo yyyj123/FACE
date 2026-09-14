@@ -1,0 +1,62 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20260819180314
+Username: SUPERMAN\24211
+RunAs User: SUPERMAN\24211
+Configuration Name: 
+Machine: SUPERMAN (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\verify-web-r-runtime.ps1 -Run 2
+Process ID: 48044
+PSVersion: 5.1.26100.7462
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.7462
+BuildVersion: 10.0.26100.7462
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+
+
+WEB_R_CLIENT_TESTS=PASS
+
+WEB_R_ADMIN_TESTS=PASS
+
+WEB_R_BACKEND_TESTS=PASS
+
+WEB_R_CLIENT_BUILD=PASS
+
+WEB_R_ADMIN_BUILD=PASS
+
+
+
+
+
+
+
+DEMO_PORT_PREFLIGHT=PASS;PORT=9290
+DEMO_FLYWAY_MIGRATE_VALIDATE=PASS
+DEMO_GATEWAY_HEALTH=PASS
+DEMO_QUICK_TUNNEL_URL=https://ntsc-rubber-logistics-extensive.trycloudflare.com
+DEMO_START=PASS
+DEMO_RESET=PASS;FLYWAY=flyway:migrate,flyway:validate
+WEB_R_FLYWAY_DYNAMIC_HISTORY=PASS;COUNT=46;LATEST=2026081901
+WEB_R_CONTAINER_HEALTH=PASS;SERVICES=mysql,backend,admin,client,gateway
+
+WEB_R_SC8_BUSINESS_REGRESSION=PASS
+
+
+
+WEB_R_CONTAINER_HEALTH=PASS;SERVICES=mysql,backend,admin,client,gateway
+
+WEB_R_RESTART_RECOVERY=PASS
+
+PS>TerminatingError(Invoke-WebRequest): "error code: 1033
+"
+DEMO_PUBLIC_STOP_INVALIDATION=PASS;URL=https://ntsc-rubber-logistics-extensive.trycloudflare.com
+DEMO_STOP=PASS
+WEB_R_REPEATABLE_RUN_2=PASS
+**********************
+Windows PowerShell transcript end
+End time: 20260819180707
+**********************

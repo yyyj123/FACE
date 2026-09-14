@@ -1,0 +1,11 @@
+face:
+  demo:
+    access-password: ${FACE_DEMO_ACCESS_PASSWORD}
+    cookie-secret: ${FACE_DEMO_COOKIE_SECRET}
+    account-password: ${FACE_DEMO_ADMIN_PASSWORD}
+  sms:
+    mode: demo
+  payment:
+    demo-mock:
+      enabled: true
+      secret: ${DEMO_MOCK_SECRET:face-demo-mock-only}

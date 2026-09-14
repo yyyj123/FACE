@@ -1,0 +1,78 @@
+services:
+  backend:
+    environment:
+      SPRING_PROFILES_ACTIVE: demo
+      SMS_MODE: demo
+      FACE_PAYMENT_DEMO_MOCK_ENABLED: "true"
+      FACE_PAYMENT_DEMO_MOCK_SECRET: ${FACE_PAYMENT_DEMO_MOCK_SECRET:?FACE_PAYMENT_DEMO_MOCK_SECRET is required}
+      FACE_DEMO_ACCESS_PASSWORD: ${FACE_DEMO_ACCESS_PASSWORD:?FACE_DEMO_ACCESS_PASSWORD is required}
+      FACE_DEMO_COOKIE_SECRET: ${FACE_DEMO_COOKIE_SECRET:?FACE_DEMO_COOKIE_SECRET is required}
+      FACE_DEMO_ADMIN_PASSWORD: ${FACE_DEMO_ADMIN_PASSWORD:?FACE_DEMO_ADMIN_PASSWORD is required}
+      FACE_SC6_FULFILLMENT_SCAN_MS: ${FACE_SC6_FULFILLMENT_SCAN_MS:-1000}
+      CORS_ALLOWED_ORIGINS: ${FACE_DEMO_ORIGIN:-https://example.invalid}
+    ports: !reset []
+
+  admin:
+    build:
+      args:
+        VITE_CHAIN_API: /
+        VITE_BASE_PATH: /admin/
+    ports: !reset []
+
+  client:
+    build:
+      args:
+        VITE_PORTAL_MODE: customer
+        VITE_BASE_PATH: /client/
+        VITE_CLIENT_API_BASE: /api/v2/client
+        VITE_V3_API_BASE: /api/v3
+    ports: !reset []
+
+  technician:
+    profiles:
+      - frozen
+    ports: !reset []
+
+  gateway:
+    image: face-salon/demo-gateway:${FACE_IMAGE_TAG:-local}
+    build:
+      context: ./demo/gateway
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${FACE_DEMO_PORT:?FACE_DEMO_PORT is required}:8080"
+    depends_on:
+      backend:
+        condition: service_healthy
+      admin:
+        condition: service_healthy
+      client:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:8080/healthz"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    networks:
+      - application
+    security_opt:
+      - no-new-privileges:true
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: "no"
+    command:
+      - tunnel
+      - --no-autoupdate
+      - --url
+      - http://gateway:8080
+      - --loglevel
+      - info
+    depends_on:
+      gateway:
+        condition: service_healthy
+    networks:
+      - application
+    profiles:
+      - tunnel
+    security_opt:
+      - no-new-privileges:true

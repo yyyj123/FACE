@@ -1,0 +1,49 @@
+html:root {
+  color-scheme: light;
+  font-family:
+    Inter, "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --oc-bg: #f7f6f7;
+  --oc-sidebar: #ffffff;
+  --oc-surface-1: #ffffff;
+  --oc-surface-2: #f4f1f3;
+  --oc-surface-3: #ebe6e9;
+  --oc-text: #251b21;
+  --oc-text-muted: #5f535a;
+  --oc-text-soft: #776b71;
+  --oc-accent: #a84f64;
+  --oc-accent-strong: #8f3f54;
+  --oc-copper: #95614d;
+  --oc-success: #35704b;
+  --oc-success-soft: #e8f2eb;
+  --oc-danger: #b7404b;
+  --oc-danger-soft: #f8e9eb;
+  --oc-border: rgba(57, 36, 47, 0.13);
+  --oc-border-strong: rgba(57, 36, 47, 0.24);
+  --oc-focus: #a84f64;
+  --oc-radius-sm: 8px;
+  --oc-radius-md: 12px;
+  --oc-motion-fast: 160ms;
+  --oc-motion-base: 220ms;
+  --el-color-primary: var(--oc-accent);
+  --el-color-primary-light-3: #be7b8b;
+  --el-color-primary-light-5: #d3a7b1;
+  --el-color-primary-light-7: #e7d2d7;
+  --el-color-primary-light-8: #f0e4e7;
+  --el-color-primary-light-9: #f8f1f3;
+  --el-color-primary-dark-2: #873f50;
+  --el-bg-color: var(--oc-surface-1);
+  --el-bg-color-overlay: var(--oc-surface-2);
+  --el-fill-color-blank: var(--oc-surface-1);
+  --el-fill-color-light: var(--oc-surface-2);
+  --el-fill-color-lighter: #faf8f9;
+  --el-fill-color-extra-light: #fcfbfc;
+  --el-border-color: var(--oc-border);
+  --el-border-color-light: var(--oc-border);
+  --el-border-color-lighter: rgba(57, 36, 47, 0.09);
+  --el-text-color-primary: var(--oc-text);
+  --el-text-color-regular: var(--oc-text-muted);
+  --el-text-color-secondary: var(--oc-text-soft);
+  --el-text-color-placeholder: #756970;
+  --el-mask-color: rgba(37, 27, 33, 0.5);
+}

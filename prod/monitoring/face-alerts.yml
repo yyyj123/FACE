@@ -1,0 +1,24 @@
+groups:
+  - name: face-production
+    rules:
+      - alert: FaceBackendDown
+        expr: up{job="face-backend"} == 0
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: FACE backend is unavailable
+      - alert: FaceJvmHeapHigh
+        expr: sum(jvm_memory_used_bytes{area="heap"}) / sum(jvm_memory_max_bytes{area="heap"}) > 0.85
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: FACE JVM heap usage is above 85 percent
+      - alert: FaceBackupStale
+        expr: time() - face_backup_last_success_unixtime > 90000
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: FACE production backup is older than 25 hours

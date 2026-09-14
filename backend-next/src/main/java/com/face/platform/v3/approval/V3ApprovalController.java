@@ -1,0 +1,152 @@
+package com.face.platform.v3.approval;
+
+import com.face.platform.approval.ApprovalApplicationService;
+import com.face.platform.idempotency.CommandIdempotencyService;
+import com.face.platform.idempotency.RequestHash;
+import com.face.platform.security.TenantPrincipal;
+import com.face.platform.v3.api.V3ApiException;
+import com.face.platform.v3.api.V3ApiResponse;
+import com.face.platform.v3.api.V3RequestSupport;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/v3/approvals")
+public class V3ApprovalController {
+
+    private final ApprovalApplicationService approvalService;
+    private final CommandIdempotencyService idempotencyService;
+
+    public V3ApprovalController(
+        ApprovalApplicationService approvalService,
+        CommandIdempotencyService idempotencyService
+    ) {
+        this.approvalService = approvalService;
+        this.idempotencyService = idempotencyService;
+    }
+
+    @GetMapping
+    public V3ApiResponse<Map<String, Object>> approvals(
+        @RequestParam(name = "shop_id") long shopId,
+        @RequestParam(required = false) String status,
+        @RequestParam(defaultValue = "1") int page,
+        @RequestParam(name = "page_size", defaultValue = "30") int pageSize,
+        HttpServletRequest request
+    ) {
+        return success(
+            approvalService.list(principal(request), shopId, status, page, pageSize),
+            request
+        );
+    }
+
+    @GetMapping("/{approvalId}")
+    public V3ApiResponse<Map<String, Object>> detail(
+        @PathVariable long approvalId,
+        @RequestParam(name = "shop_id") long shopId,
+        HttpServletRequest request
+    ) {
+        return success(approvalService.detail(principal(request), shopId, approvalId), request);
+    }
+
+    @PostMapping("/{approvalId}/decisions")
+    public V3ApiResponse<Map<String, Object>> decide(
+        @PathVariable long approvalId,
+        @Valid @RequestBody DecisionBody body,
+        @RequestHeader(name = "Idempotency-Key", required = false) String idempotencyKey,
+        HttpServletRequest request
+    ) {
+        TenantPrincipal principal = principal(request);
+        String key = requiredKey(idempotencyKey);
+        String hash = RequestHash.of(
+            approvalId, body.shop_id(), body.version(), body.action(), body.reason()
+        );
+        final Map<String, Object>[] result = new Map[1];
+        idempotencyService.run(
+            principal, key, "APPROVAL_DECISION", hash,
+            () -> result[0] = approvalService.decide(
+                principal, body.shop_id(), approvalId, body.version(),
+                body.action(), body.reason(), key, hash
+            )
+        );
+        return success(
+            result[0] == null
+                ? approvalService.detail(principal, body.shop_id(), approvalId)
+                : result[0],
+            request
+        );
+    }
+
+    @PostMapping("/{approvalId}/cancel")
+    public V3ApiResponse<Map<String, Object>> cancel(
+        @PathVariable long approvalId,
+        @Valid @RequestBody CancelBody body,
+        @RequestHeader(name = "Idempotency-Key", required = false) String idempotencyKey,
+        HttpServletRequest request
+    ) {
+        TenantPrincipal principal = principal(request);
+        String key = requiredKey(idempotencyKey);
+        String hash = RequestHash.of(
+            approvalId, body.shop_id(), body.version(), body.reason(), "CANCEL"
+        );
+        final Map<String, Object>[] result = new Map[1];
+        idempotencyService.run(
+            principal, key, "APPROVAL_CANCEL", hash,
+            () -> result[0] = approvalService.cancel(
+                principal, body.shop_id(), approvalId, body.version(), body.reason()
+            )
+        );
+        return success(
+            result[0] == null
+                ? approvalService.detail(principal, body.shop_id(), approvalId)
+                : result[0],
+            request
+        );
+    }
+
+    private TenantPrincipal principal(HttpServletRequest request) {
+        return V3RequestSupport.principal(request);
+    }
+
+    private String requiredKey(String value) {
+        if (value == null || value.isBlank() || value.trim().length() > 80) {
+            throw new V3ApiException(
+                HttpStatus.BAD_REQUEST, "IDEMPOTENCY_KEY_REQUIRED",
+                "关键写操作必须提供有效的 Idempotency-Key"
+            );
+        }
+        return value.trim();
+    }
+
+    private <T> V3ApiResponse<T> success(T data, HttpServletRequest request) {
+        return V3ApiResponse.success(data, V3RequestSupport.requestId(request));
+    }
+
+    public record DecisionBody(
+        @NotNull Long shop_id,
+        @NotNull Integer version,
+        @NotBlank @Size(max = 20) String action,
+        @Size(max = 500) String reason
+    ) {
+    }
+
+    public record CancelBody(
+        @NotNull Long shop_id,
+        @NotNull Integer version,
+        @Size(max = 500) String reason
+    ) {
+    }
+}

@@ -1,0 +1,308 @@
+/*
+ * Expanding action buttons shared by both Vue clients.
+ *
+ * The control keeps a 140px hit area at all times while only its painted
+ * surface expands. This preserves the circular-to-pill interaction without
+ * changing layout or invalidating :hover while the pointer is stationary.
+ */
+.el-button:not(.is-circle) {
+  --action-bg: rgb(20, 20, 20);
+  --action-hover: #a84f64;
+  --action-width: 140px;
+  --action-size: 50px;
+  box-sizing: border-box !important;
+  position: relative !important;
+  isolation: isolate;
+  display: inline-grid !important;
+  place-items: center;
+  width: var(--action-width) !important;
+  min-width: var(--action-width) !important;
+  height: var(--action-size) !important;
+  min-height: var(--action-size) !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  vertical-align: middle;
+  cursor: pointer;
+  transform: none !important;
+}
+
+/* Painted surface: transform-only animation avoids layout/reflow. */
+.el-button:not(.is-circle)::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  width: var(--action-size);
+  margin: 0 auto;
+  border-radius: 999px;
+  background: var(--action-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .28);
+  content: '';
+  transform: scaleX(1);
+  transform-origin: center;
+  transition:
+    transform .3s cubic-bezier(.22, 1, .36, 1),
+    background-color .22s ease,
+    box-shadow .22s ease !important;
+}
+
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):hover::before,
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):focus-visible::before {
+  background: var(--action-hover);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, .32);
+  transform: scaleX(2.8);
+}
+
+/* The idle glyph and expanded label occupy the same stable hit area. */
+.el-button:not(.is-circle)::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  content: '→';
+  background: none !important;
+  animation: none !important;
+  filter: none !important;
+  font-size: 16px;
+  font-weight: 700;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: transform .3s ease, opacity .16s ease !important;
+  pointer-events: none;
+}
+
+.el-button--primary:not(.is-circle):not(.is-disabled):not(:disabled):hover::after,
+.el-button--primary:not(.is-circle):not(.is-disabled):not(:disabled):focus-visible::after {
+  background: none !important;
+  animation: none !important;
+}
+
+.el-button:not(.is-circle) > i {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  margin: 0 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  opacity: 1;
+  place-items: center;
+  transform: translateY(0) scale(1);
+  transition: transform .3s ease, opacity .16s ease !important;
+  pointer-events: none;
+}
+
+.el-button:not(.is-circle):has(> i)::after {
+  display: none;
+}
+
+.el-button:not(.is-circle) > span {
+  position: relative !important;
+  z-index: 2;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 14px !important;
+  overflow: hidden;
+  color: #fff !important;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(-18px);
+  transition: transform .3s ease, opacity .18s ease !important;
+  pointer-events: none;
+}
+
+.el-button:not(.is-circle) > span > .icon {
+  display: none !important;
+}
+
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):hover::after,
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):hover > i,
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):focus-visible::after,
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):focus-visible > i {
+  opacity: 0;
+  transform: translateY(18px) scale(1.8);
+}
+
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):hover > span,
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):focus-visible > span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.el-button:not(.is-circle):not(.is-disabled):not(:disabled):active::before {
+  filter: brightness(.92);
+  transform: scaleX(2.72) scaleY(.96);
+}
+
+.el-button:not(.is-circle):focus-visible {
+  outline: 2px solid var(--oc-focus, #d7a18c) !important;
+  outline-offset: 2px;
+}
+
+.el-button--danger,
+.el-button.del,
+.el-button.delBtn {
+  --action-bg: rgb(92, 35, 47);
+  --action-hover: rgb(214, 75, 88);
+}
+.el-button.del::after,
+.el-button.delBtn::after,
+.el-button--danger::after { content: '×' !important; font-size: 22px; }
+.el-button.add::after,
+.el-button.list-add-btn::after { content: '+' !important; font-size: 22px; }
+.el-button.search::after,
+.el-button.list-search-btn::after { content: '⌕' !important; font-size: 20px; }
+.el-button.edit::after,
+.el-button.editBtn::after { content: '✎' !important; font-size: 18px; }
+.el-button.view:not(.is-circle)::after {
+  content: '' !important;
+  background-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 22'%3E%3Cpath d='M1 11S6 2 16 2s15 9 15 9-5 9-15 9S1 11 1 11Z' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='16' cy='11' r='4.5' fill='none' stroke='white' stroke-width='2.5'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 28px 20px !important;
+}
+.el-button.backBtn:not(.is-circle)::after,
+.el-button.btn5:not(.is-circle)::after {
+  content: '' !important;
+  background-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 28'%3E%3Cpath d='M14 3 3 14l11 11M4 14h25' fill='none' stroke='white' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: 28px 24px !important;
+}
+.el-button.btn18::after { content: '◆' !important; font-size: 14px; }
+.el-button.reset,
+.el-button.backBtn,
+.el-button.closeBtn,
+.el-button.btn4,
+.el-button.btn5 { --action-hover: #55505a; }
+.el-button--warning,
+.el-button.auditBtn { --action-hover: #a97942; }
+
+.el-button.is-disabled,
+.el-button:disabled {
+  cursor: not-allowed !important;
+  opacity: .58;
+}
+
+/* Layout reserves the fully expanded width and wraps before it can clip. */
+.el-button + .el-button { margin-left: 0 !important; }
+.el-button-group { display: inline-flex; gap: 8px; flex-wrap: wrap; }
+.el-button-group > .el-button { margin: 0 !important; }
+
+.oc-admin-actions,
+.center-form-pv .actions,
+.oc-list-actions,
+.list-form-pv .actions,
+.formSearch {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
+  overflow: visible !important;
+}
+
+.el-table .cell:has(.el-button) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  overflow: visible !important;
+}
+
+/* Table controls use a smaller but still stable expansion footprint. */
+.el-table .cell .el-button:not(.is-circle) {
+  --action-width: 104px;
+  --action-size: 36px;
+  font-size: 13px !important;
+}
+
+.el-button--text:not(.is-circle) {
+  --action-width: 72px;
+  --action-size: 36px;
+}
+
+@media (any-hover: none) and (pointer: coarse) {
+  .el-button:not(.is-circle):not(.is-disabled):not(:disabled)::before {
+    background: var(--action-hover);
+    transform: scaleX(calc(var(--action-width) / var(--action-size)));
+  }
+  .el-button:not(.is-circle):not(.is-disabled):not(:disabled)::after,
+  .el-button:not(.is-circle):not(.is-disabled):not(:disabled) > i { display: none; }
+  .el-button:not(.is-circle):not(.is-disabled):not(:disabled) > span {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .el-button,
+  .el-button::before,
+  .el-button::after,
+  .el-button > i,
+  .el-button > span { transition: none !important; }
+}
+
+/* Explicit opt-out for task-critical controls that must stay visually static. */
+.el-button.static-action:not(.is-circle) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 24px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background: #bd6788 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .24) !important;
+  transform: none !important;
+  transition: background-color .2s ease, box-shadow .2s ease !important;
+}
+
+.el-button.static-action:not(.is-circle)::before,
+.el-button.static-action:not(.is-circle)::after {
+  display: none !important;
+  content: none !important;
+}
+
+.el-button.static-action:not(.is-circle) > span {
+  position: static !important;
+  display: inline-flex !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  color: #fff !important;
+  font-size: 16px !important;
+  line-height: 1 !important;
+  letter-spacing: .08em !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.el-button.static-action:not(.is-circle):hover,
+.el-button.static-action:not(.is-circle):focus-visible {
+  background: #a84f64 !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .28) !important;
+}
+
+.el-button.static-action:not(.is-circle):active {
+  background: #934357 !important;
+}

@@ -1,0 +1,1025 @@
+{
+  "run": 2,
+  "mode": "full-matrix",
+  "url": "http://127.0.0.1:9290",
+  "viewports": {
+    "mobile-portrait": {
+      "width": 390,
+      "height": 844,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护",
+          "staffPagination": {
+            "first": {
+              "cardCount": 5,
+              "cardWidths": [
+                175,
+                175,
+                175,
+                175,
+                175
+              ],
+              "pageCount": 2,
+              "currentPage": "1",
+              "nextDisabled": false
+            },
+            "second": {
+              "cardCount": 2,
+              "cardWidths": [
+                175,
+                175
+              ],
+              "currentPage": "2",
+              "nextDisabled": true
+            }
+          }
+        },
+        "services": {
+          "title": "护理项目 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "CARE CATALOG\n护理项目\n\n项目价格、护理时长、介绍与上下架状态均由管理端统一维护。\n\n选择项目并预约\n默认排序\n浏览热度\n收藏热度\n全部项目\n面部护理\n身体护理\n美甲美睫\n护理套餐\n共 2"
+        },
+        "booking": {
+          "title": "预约护理 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "BOOK A VISIT\n预约到店护理\n\n可选时段全部由服务端依据排班、休息、请假、停约、现有预约和 15 分钟时间锁实时生成。\n\n01\n选择护理项目\n\n项目规则会随预约一并留存快照\n\n敏感修护护理\n",
+          "hourlyBooking": {
+            "times": [
+              "09:00",
+              "10:00",
+              "11:00",
+              "12:00",
+              "13:00",
+              "14:00",
+              "15:00",
+              "16:00"
+            ],
+            "onlyWholeHours": true,
+            "intervalCopy": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "intervalText": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "durationText": "70 分钟"
+          }
+        },
+        "appointments": {
+          "title": "预约记录 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "个人服务中心\n预约与护理记录\n\n预约状态、护理结果和本人确认都集中在这里，记录与门店保持一致。\n\n新增预约\n全部\n待确认\n待到店\n已完成\n已取消\n已完成\nDEMO-APT-01\n水润舒缓护理、法式裸粉"
+        },
+        "benefits": {
+          "title": "我的资产 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER BENEFITS\n我的卡项与优惠券\n\n次数、储值、折扣和护理优惠券均显示可用、冻结与来源状态。\n\n刷新权益\n可用卡项\n5\n可用优惠券\n5\n冻结权益\n0\n我的卡项\n\n付款与优惠分开选择，不"
+        },
+        "points-store": {
+          "title": "积分商城 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "POINTS & STORE\n\n积分商城\n\n积分、现金与组合支付共用实时库存，购物车不提前占货。\n\n可用积分\n0\n选购\n积分明细\n购物车 0\nSC6 runtime\nSC6 runtime\nSC6 r"
+        },
+        "care-feedback": {
+          "title": "评价与售后 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "履约与保障\n护理确认、评价与售后\n\n从护理结束确认到评价、售后与退货验货，每一步都有状态和留痕。\n\n刷新\n待确认 0\n评价 5\n售后 10\n退换货 5\n护理结果确认\n\n请在护理结束后 24 小时内确认"
+        },
+        "profile": {
+          "title": "个人中心 · FACE",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER CENTER\n体验会员\n\n会员编号 M0001\n\n登录账号\nm:1:13900000001\n联系电话\n13900000001\n所属门店\nFACE 美容护理中心\n编辑资料\n全部预约\n5\n已"
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        },
+        "workbench": {
+          "title": "今日工作台 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "移动高频管理\n今日工作台\n\n预约、日程、履约、候补、发货与售后待办集中处理。\n\nFACE 美容护理中心\n刷新\n今日预约\n2\n按门店自然日\n待处理总计\n12\n候补 / 履约 / 发货 / 售后\n活跃会员"
+        },
+        "booking-operations": {
+          "title": "预约与排班 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "SC3 BOOKING\n预约与排班\n\n维护项目预约规则、技师排班、代客预约和候补匹配。订单、支付与权益不在本阶段。\n\n排班\n预约规则\n代客预约 / 候补\n技师一周排班总览\n\n2026-08-19 至 ",
+          "hourlySchedule": {
+            "ranges": [
+              "08:00–09:00",
+              "09:00–10:00",
+              "10:00–11:00",
+              "11:00–12:00",
+              "12:00–13:00",
+              "13:00–14:00",
+              "14:00–15:00",
+              "15:00–16:00",
+              "16:00–17:00",
+              "17:00–18:00",
+              "18:00–19:00",
+              "19:00–20:00",
+              "20:00–21:00",
+              "21:00–22:00"
+            ],
+            "title": "每小时安排",
+            "everyRangeIsOneHour": true
+          }
+        },
+        "fulfillment": {
+          "title": "履约与售后 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 978,
+          "documentWidth": 978,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "FULFILLMENT & CARE\n履约、评价与售后\n\n确认时限、评价审核、方案风险和实物验货集中处理；管理员不得修改顾客原文和评分，所有资产动作保留不可变流水。\n\nFACE 美容护理中心\n刷新\n待"
+        },
+        "member-operations": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 390,
+          "documentWidth": 390,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        }
+      },
+      "adminDrawer": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      }
+    },
+    "tablet-portrait": {
+      "width": 768,
+      "height": 1024,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护",
+          "staffPagination": {
+            "first": {
+              "cardCount": 5,
+              "cardWidths": [
+                228,
+                228,
+                228,
+                228,
+                228
+              ],
+              "pageCount": 2,
+              "currentPage": "1",
+              "nextDisabled": false
+            },
+            "second": {
+              "cardCount": 2,
+              "cardWidths": [
+                228,
+                228
+              ],
+              "currentPage": "2",
+              "nextDisabled": true
+            }
+          }
+        },
+        "services": {
+          "title": "护理项目 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "CARE CATALOG\n护理项目\n\n项目价格、护理时长、介绍与上下架状态均由管理端统一维护。\n\n选择项目并预约\n默认排序\n浏览热度\n收藏热度\n全部项目\n面部护理\n身体护理\n美甲美睫\n护理套餐\n共 2"
+        },
+        "booking": {
+          "title": "预约护理 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "BOOK A VISIT\n预约到店护理\n\n可选时段全部由服务端依据排班、休息、请假、停约、现有预约和 15 分钟时间锁实时生成。\n\n01\n选择护理项目\n\n项目规则会随预约一并留存快照\n\n敏感修护护理\n",
+          "hourlyBooking": {
+            "times": [
+              "09:00",
+              "10:00",
+              "11:00",
+              "12:00",
+              "13:00",
+              "14:00",
+              "15:00",
+              "16:00"
+            ],
+            "onlyWholeHours": true,
+            "intervalCopy": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "intervalText": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "durationText": "70 分钟"
+          }
+        },
+        "appointments": {
+          "title": "预约记录 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "个人服务中心\n预约与护理记录\n\n预约状态、护理结果和本人确认都集中在这里，记录与门店保持一致。\n\n新增预约\n全部\n待确认\n待到店\n已完成\n已取消\n已完成\nDEMO-APT-01\n水润舒缓护理、法式裸粉"
+        },
+        "benefits": {
+          "title": "我的资产 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER BENEFITS\n我的卡项与优惠券\n\n次数、储值、折扣和护理优惠券均显示可用、冻结与来源状态。\n\n刷新权益\n可用卡项\n5\n可用优惠券\n5\n冻结权益\n0\n我的卡项\n\n付款与优惠分开选择，不"
+        },
+        "points-store": {
+          "title": "积分商城 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "POINTS & STORE\n\n积分商城\n\n积分、现金与组合支付共用实时库存，购物车不提前占货。\n\n可用积分\n0\n选购\n积分明细\n购物车 0\nSC6 runtime\nSC6 runtime\nSC6 r"
+        },
+        "care-feedback": {
+          "title": "评价与售后 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "履约与保障\n护理确认、评价与售后\n\n从护理结束确认到评价、售后与退货验货，每一步都有状态和留痕。\n\n刷新\n待确认 0\n评价 5\n售后 10\n退换货 5\n护理结果确认\n\n请在护理结束后 24 小时内确认"
+        },
+        "profile": {
+          "title": "个人中心 · FACE",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER CENTER\n体验会员\n\n会员编号 M0001\n\n登录账号\nm:1:13900000001\n联系电话\n13900000001\n所属门店\nFACE 美容护理中心\n编辑资料\n全部预约\n5\n已"
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        },
+        "workbench": {
+          "title": "今日工作台 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "移动高频管理\n今日工作台\n\n预约、日程、履约、候补、发货与售后待办集中处理。\n\nFACE 美容护理中心\n刷新\n今日预约\n2\n按门店自然日\n待处理总计\n12\n候补 / 履约 / 发货 / 售后\n活跃会员"
+        },
+        "booking-operations": {
+          "title": "预约与排班 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "SC3 BOOKING\n预约与排班\n\n维护项目预约规则、技师排班、代客预约和候补匹配。订单、支付与权益不在本阶段。\n\n排班\n预约规则\n代客预约 / 候补\n技师一周排班总览\n\n2026-08-19 至 ",
+          "hourlySchedule": {
+            "ranges": [
+              "08:00–09:00",
+              "09:00–10:00",
+              "10:00–11:00",
+              "11:00–12:00",
+              "12:00–13:00",
+              "13:00–14:00",
+              "14:00–15:00",
+              "15:00–16:00",
+              "16:00–17:00",
+              "17:00–18:00",
+              "18:00–19:00",
+              "19:00–20:00",
+              "20:00–21:00",
+              "21:00–22:00"
+            ],
+            "title": "每小时安排",
+            "everyRangeIsOneHour": true
+          }
+        },
+        "fulfillment": {
+          "title": "履约与售后 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 982,
+          "documentWidth": 982,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "FULFILLMENT & CARE\n履约、评价与售后\n\n确认时限、评价审核、方案风险和实物验货集中处理；管理员不得修改顾客原文和评分，所有资产动作保留不可变流水。\n\nFACE 美容护理中心\n刷新\n待"
+        },
+        "member-operations": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 768,
+          "documentWidth": 768,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        }
+      },
+      "adminDrawer": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      }
+    },
+    "desktop": {
+      "width": 1440,
+      "height": 960,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护",
+          "staffPagination": {
+            "first": {
+              "cardCount": 5,
+              "cardWidths": [
+                226,
+                226,
+                226,
+                226,
+                226
+              ],
+              "pageCount": 2,
+              "currentPage": "1",
+              "nextDisabled": false
+            },
+            "second": {
+              "cardCount": 2,
+              "cardWidths": [
+                226,
+                226
+              ],
+              "currentPage": "2",
+              "nextDisabled": true
+            }
+          }
+        },
+        "services": {
+          "title": "护理项目 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "CARE CATALOG\n护理项目\n\n项目价格、护理时长、介绍与上下架状态均由管理端统一维护。\n\n选择项目并预约\n默认排序\n浏览热度\n收藏热度\n全部项目\n面部护理\n身体护理\n美甲美睫\n护理套餐\n共 2"
+        },
+        "booking": {
+          "title": "预约护理 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "BOOK A VISIT\n预约到店护理\n\n可选时段全部由服务端依据排班、休息、请假、停约、现有预约和 15 分钟时间锁实时生成。\n\n01\n选择护理项目\n\n项目规则会随预约一并留存快照\n\n敏感修护护理\n",
+          "hourlyBooking": {
+            "times": [
+              "09:00",
+              "10:00",
+              "11:00",
+              "12:00",
+              "13:00",
+              "14:00",
+              "15:00",
+              "16:00"
+            ],
+            "onlyWholeHours": true,
+            "intervalCopy": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "intervalText": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "durationText": "70 分钟"
+          }
+        },
+        "appointments": {
+          "title": "预约记录 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "个人服务中心\n预约与护理记录\n\n预约状态、护理结果和本人确认都集中在这里，记录与门店保持一致。\n\n新增预约\n全部\n待确认\n待到店\n已完成\n已取消\n已完成\nDEMO-APT-01\n水润舒缓护理、法式裸粉"
+        },
+        "benefits": {
+          "title": "我的资产 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER BENEFITS\n我的卡项与优惠券\n\n次数、储值、折扣和护理优惠券均显示可用、冻结与来源状态。\n\n刷新权益\n可用卡项\n5\n可用优惠券\n5\n冻结权益\n0\n我的卡项\n\n付款与优惠分开选择，不"
+        },
+        "points-store": {
+          "title": "积分商城 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "POINTS & STORE\n\n积分商城\n\n积分、现金与组合支付共用实时库存，购物车不提前占货。\n\n可用积分\n0\n选购\n积分明细\n购物车 0\nSC6 runtime\nSC6 runtime\nSC6 r"
+        },
+        "care-feedback": {
+          "title": "评价与售后 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "履约与保障\n护理确认、评价与售后\n\n从护理结束确认到评价、售后与退货验货，每一步都有状态和留痕。\n\n刷新\n待确认 0\n评价 5\n售后 10\n退换货 5\n护理结果确认\n\n请在护理结束后 24 小时内确认"
+        },
+        "profile": {
+          "title": "个人中心 · FACE",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER CENTER\n体验会员\n\n会员编号 M0001\n\n登录账号\nm:1:13900000001\n联系电话\n13900000001\n所属门店\nFACE 美容护理中心\n编辑资料\n全部预约\n5\n已"
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        },
+        "workbench": {
+          "title": "今日工作台 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "移动高频管理\n今日工作台\n\n预约、日程、履约、候补、发货与售后待办集中处理。\n\nFACE 美容护理中心\n刷新\n今日预约\n2\n按门店自然日\n待处理总计\n12\n候补 / 履约 / 发货 / 售后\n活跃会员"
+        },
+        "booking-operations": {
+          "title": "预约与排班 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "SC3 BOOKING\n预约与排班\n\n维护项目预约规则、技师排班、代客预约和候补匹配。订单、支付与权益不在本阶段。\n\n排班\n预约规则\n代客预约 / 候补\n技师一周排班总览\n\n2026-08-19 至 ",
+          "hourlySchedule": {
+            "ranges": [
+              "08:00–09:00",
+              "09:00–10:00",
+              "10:00–11:00",
+              "11:00–12:00",
+              "12:00–13:00",
+              "13:00–14:00",
+              "14:00–15:00",
+              "15:00–16:00",
+              "16:00–17:00",
+              "17:00–18:00",
+              "18:00–19:00",
+              "19:00–20:00",
+              "20:00–21:00",
+              "21:00–22:00"
+            ],
+            "title": "每小时安排",
+            "everyRangeIsOneHour": true
+          }
+        },
+        "fulfillment": {
+          "title": "履约与售后 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "FULFILLMENT & CARE\n履约、评价与售后\n\n确认时限、评价审核、方案风险和实物验货集中处理；管理员不得修改顾客原文和评分，所有资产动作保留不可变流水。\n\nFACE 美容护理中心\n刷新\n待"
+        },
+        "member-operations": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 1440,
+          "documentWidth": 1425,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        }
+      }
+    },
+    "mobile-landscape": {
+      "width": 844,
+      "height": 390,
+      "client": {
+        "home": {
+          "title": "首页 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "FACE BEAUTY CARE\n新客舒缓体验\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排班同步\n清晰时长\n到店节奏可预期\n护",
+          "staffPagination": {
+            "first": {
+              "cardCount": 5,
+              "cardWidths": [
+                253,
+                253,
+                253,
+                253,
+                253
+              ],
+              "pageCount": 2,
+              "currentPage": "1",
+              "nextDisabled": false
+            },
+            "second": {
+              "cardCount": 2,
+              "cardWidths": [
+                253,
+                253
+              ],
+              "currentPage": "2",
+              "nextDisabled": true
+            }
+          }
+        },
+        "services": {
+          "title": "护理项目 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "CARE CATALOG\n护理项目\n\n项目价格、护理时长、介绍与上下架状态均由管理端统一维护。\n\n选择项目并预约\n默认排序\n浏览热度\n收藏热度\n全部项目\n面部护理\n身体护理\n美甲美睫\n护理套餐\n共 2"
+        },
+        "booking": {
+          "title": "预约护理 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "BOOK A VISIT\n预约到店护理\n\n可选时段全部由服务端依据排班、休息、请假、停约、现有预约和 15 分钟时间锁实时生成。\n\n01\n选择护理项目\n\n项目规则会随预约一并留存快照\n\n敏感修护护理\n",
+          "hourlyBooking": {
+            "times": [
+              "09:00",
+              "10:00",
+              "11:00",
+              "12:00",
+              "13:00",
+              "14:00",
+              "15:00",
+              "16:00"
+            ],
+            "onlyWholeHours": true,
+            "intervalCopy": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "intervalText": "每 60 分钟开放一个预约开始时间，护理时长按所选项目计算",
+            "durationText": "70 分钟"
+          }
+        },
+        "appointments": {
+          "title": "预约记录 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "个人服务中心\n预约与护理记录\n\n预约状态、护理结果和本人确认都集中在这里，记录与门店保持一致。\n\n新增预约\n全部\n待确认\n待到店\n已完成\n已取消\n已完成\nDEMO-APT-01\n水润舒缓护理、法式裸粉"
+        },
+        "benefits": {
+          "title": "我的资产 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER BENEFITS\n我的卡项与优惠券\n\n次数、储值、折扣和护理优惠券均显示可用、冻结与来源状态。\n\n刷新权益\n可用卡项\n5\n可用优惠券\n5\n冻结权益\n0\n我的卡项\n\n付款与优惠分开选择，不"
+        },
+        "points-store": {
+          "title": "积分商城 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "POINTS & STORE\n\n积分商城\n\n积分、现金与组合支付共用实时库存，购物车不提前占货。\n\n可用积分\n0\n选购\n积分明细\n购物车 0\nSC6 runtime\nSC6 runtime\nSC6 r"
+        },
+        "care-feedback": {
+          "title": "评价与售后 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "履约与保障\n护理确认、评价与售后\n\n从护理结束确认到评价、售后与退货验货，每一步都有状态和留痕。\n\n刷新\n待确认 0\n评价 5\n售后 10\n退换货 5\n护理结果确认\n\n请在护理结束后 24 小时内确认"
+        },
+        "profile": {
+          "title": "个人中心 · FACE",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTargets": true,
+          "frozenTechnicianEntry": false,
+          "body": "MEMBER CENTER\n体验会员\n\n会员编号 M0001\n\n登录账号\nm:1:13900000001\n联系电话\n13900000001\n所属门店\nFACE 美容护理中心\n编辑资料\n全部预约\n5\n已"
+        }
+      },
+      "admin": {
+        "overview": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        },
+        "workbench": {
+          "title": "今日工作台 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "移动高频管理\n今日工作台\n\n预约、日程、履约、候补、发货与售后待办集中处理。\n\nFACE 美容护理中心\n刷新\n今日预约\n2\n按门店自然日\n待处理总计\n12\n候补 / 履约 / 发货 / 售后\n活跃会员"
+        },
+        "booking-operations": {
+          "title": "预约与排班 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "SC3 BOOKING\n预约与排班\n\n维护项目预约规则、技师排班、代客预约和候补匹配。订单、支付与权益不在本阶段。\n\n排班\n预约规则\n代客预约 / 候补\n技师一周排班总览\n\n2026-08-19 至 ",
+          "hourlySchedule": {
+            "ranges": [
+              "08:00–09:00",
+              "09:00–10:00",
+              "10:00–11:00",
+              "11:00–12:00",
+              "12:00–13:00",
+              "13:00–14:00",
+              "14:00–15:00",
+              "15:00–16:00",
+              "16:00–17:00",
+              "17:00–18:00",
+              "18:00–19:00",
+              "19:00–20:00",
+              "20:00–21:00",
+              "21:00–22:00"
+            ],
+            "title": "每小时安排",
+            "everyRangeIsOneHour": true
+          }
+        },
+        "fulfillment": {
+          "title": "履约与售后 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 982,
+          "documentWidth": 982,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "FULFILLMENT & CARE\n履约、评价与售后\n\n确认时限、评价审核、方案风险和实物验货集中处理；管理员不得修改顾客原文和评分，所有资产动作保留不可变流水。\n\nFACE 美容护理中心\n刷新\n待"
+        },
+        "member-operations": {
+          "title": "运营总览 · FACE 运营管理平台",
+          "overflow": true,
+          "viewportWidth": 844,
+          "documentWidth": 844,
+          "overflowDetails": [],
+          "mainTarget": true,
+          "mainFocused": true,
+          "skipTarget": true,
+          "correctNavigation": true,
+          "touchTarget": true,
+          "staleStageLabel": false,
+          "body": "店铺运营总览\n\n把成交、顾客和项目表现放在同一张看板里，及时发现变化。\n\nFACE 美容护理中心\n近7天\n近30天\n近90天\n刷新\n净实收\n¥418.00\n上期无成交\n预约总数\n7\n所选周期内全部预约"
+        }
+      },
+      "adminDrawer": {
+        "opened": true,
+        "closed": true,
+        "focusReturned": true
+      }
+    }
+  },
+  "severeEventCount": 0,
+  "ignoredExtensionEventCount": 4,
+  "severeEvents": []
+}

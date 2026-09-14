@@ -1,0 +1,26 @@
+{
+  "desktop": {
+    "client": {
+      "title": "FACE 美容护理",
+      "overflow": true,
+      "body": "F\nFACE\nBEAUTY & CARE\n首页\n护理项目\n立即预约\n登录\n预约护理\nFACE BEAUTY CARE\n把每一次护理，安排得从容而清晰\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择"
+    },
+    "admin": {
+      "title": "FACE 连锁店管理平台",
+      "overflow": true,
+      "body": "F\nFACE\n连锁管理平台\n\nSC2 单店运营入口\n\n内容、项目与公开资料，在一个清晰的工作台维护。\n\n平台从登录身份中解析权限和默认门店，不接受前端自行指定业务范围。\n\n01\nADMIN 与 SUPER_ADMIN 两级权限\n02\n首页内"
+    }
+  },
+  "mobile": {
+    "client": {
+      "title": "FACE 美容护理",
+      "overflow": true,
+      "body": "F\nFACE\nBEAUTY & CARE\n登录\n预约护理\nFACE BEAUTY CARE\n把每一次护理，安排得从容而清晰\n\n从项目选择、技师排期到到店护理，信息与门店实时同步，不再反复确认。\n\n了解本期护理\n选择到店时间\n实时预约\n门店排"
+    },
+    "admin": {
+      "title": "FACE 连锁店管理平台",
+      "overflow": true,
+      "body": "F\nFACE\n连锁管理平台\n\nSC2 单店运营入口\n\n内容、项目与公开资料，在一个清晰的工作台维护。\n\n平台从登录身份中解析权限和默认门店，不接受前端自行指定业务范围。\n\n管理员验证\n\n登录运营管理平台\n\n仅 ADMIN 或 SUPER_A"
+    }
+  }
+}
